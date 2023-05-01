@@ -17,4 +17,4 @@ Ensuring that Buyers and Sellers can save time and money.<p>
 
 <p>Any changes or cancellations can only be made with written permission provided by the project creator, Ali Allahverdiyev.<p>
 
-<p>All rights reserved 2023</p>
+<p>All rights reserved <script>new Date().getFullYear()</script></p>
