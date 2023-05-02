@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
 
+// icons
+import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai'
+
+
 // image
 import desc from "../assets/img/desc.svg";
 import turk from "../assets/img/turkey.png";
@@ -34,9 +38,8 @@ const Header = () => {
                 item.menu.map((x) => (
                   <li key={x.id}>
                     <NavLink
-                      className={`menu-item ${
-                        x.isActive ? "active" : "non-active"
-                      }`}
+                      className={`menu-item ${x.isActive ? "active" : "non-active"
+                        }`}
                       to={x.to}
                     >
                       {x.item}
@@ -46,7 +49,7 @@ const Header = () => {
               )}
             </ul>
 
-            <form className="language">
+            <div className="language">
               <img
                 ref={isTurkish ? turkishRef : englishRef}
                 src={isTurkish ? turk : english}
@@ -54,23 +57,27 @@ const Header = () => {
               />
 
               <div className="language-submenu">
-                <button type="button" onClick={toggleLanguage}>
+                <a onClick={toggleLanguage}>
                   <img
                     ref={!isTurkish ? turkishRef : englishRef}
                     src={!isTurkish ? turk : english}
                     alt=""
                   />
-                </button>
+                </a>
               </div>
-            </form>
+            </div>
 
             <Link to="/login">
-              <button className="login-btn">Login</button>
+              <button className="login-btn"><AiOutlineLogin /> Login</button>
             </Link>
 
             <Link to="/register">
               <button className="login-btn">Register</button>
             </Link>
+
+            <div className="burger-menu">
+              <AiOutlineMenu/>
+            </div>
           </div>
         </div>
       </div>
