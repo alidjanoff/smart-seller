@@ -4,8 +4,9 @@ const MainContext = createContext();
 
 const Context = ({ children }) => {
   const [data, setData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const globalStates = { data, setData };
+  const globalStates = { data, setData , isOpen};
 
   return (
     <MainContext.Provider value={globalStates}>{children}</MainContext.Provider>

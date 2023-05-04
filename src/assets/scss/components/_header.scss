@@ -1,102 +1,114 @@
 header {
     padding-top: 2rem;
 
-    .header-row-1 {
-        height: 60px;
-        align-items: center;
 
-        .logo {
-            display: flex;
+
+    .header-container {
+        position: relative;
+
+        .header-row-1 {
+            height: 60px;
             align-items: center;
+            transition: all 0.5s;
 
-            .logo-inner {
+            .logo {
                 display: flex;
                 align-items: center;
-                text-decoration: none;
-                font-size: 25px;
-                cursor: pointer;
-                color: var(--text-color-5);
 
-                p {
+                .logo-inner {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 25px;
+                    cursor: pointer;
+                    color: var(--text-color-5);
+
+                    p {
+                        margin-bottom: 0;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                column-gap: 20px;
+
+                ul {
+                    display: flex;
+                    column-gap: 25px;
+                    align-items: center;
                     margin-bottom: 0;
-                    font-weight: 600;
-                }
-            }
-        }
 
-        .menu {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            column-gap: 20px;
+                    li {
+                        font-size: 16px;
 
-            ul {
-                display: flex;
-                column-gap: 25px;
-                align-items: center;
-                margin-bottom: 0;
-
-                li {
-                    font-size: 16px;
-
-                    .menu-item {
-                        text-decoration: none;
-                        color: var(--text-color-5);
-                    }
-                }
-            }
-
-            .language {
-                width: max-content;
-                cursor: pointer;
-                position: relative;
-
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
-
-                .language-submenu {
-                    width: 90px;
-                    height: 90px;
-                    position: absolute;
-                    padding-top: 5px;
-                    display: none;
-
-                    button {
-                        border: none;
-                        background: transparent;
+                        .menu-item {
+                            text-decoration: none;
+                            color: var(--text-color-5);
+                        }
                     }
                 }
 
-                &:hover {
+                .language {
+                    width: max-content;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+
                     .language-submenu {
-                        display: block;
+                        width: 90px;
+                        height: 90px;
+                        position: absolute;
+                        padding-top: 5px;
+                        display: none;
+
+                        button {
+                            border: none;
+                            background: transparent;
+                        }
                     }
+
+                    &:hover {
+                        .language-submenu {
+                            display: block;
+                        }
+                    }
+
                 }
 
-            }
+                .login-btn {
+                    width: 100px;
+                    height: 35px;
+                    border-radius: 20px;
+                    background-color: var(--bg-color-2);
+                    border: none;
+                    color: var(--text-color-1);
+                    font-size: 16px;
+                }
 
-            .login-btn {
-                width: 100px;
-                height: 35px;
-                border-radius: 20px;
-                background-color: var(--bg-color-2);
-                border: none;
-                color: var(--text-color-1);
-                font-size: 16px;
-            }
+                .login-1{
+                    background-color: var(--text-color-1);
+                    color: var(--bg-color-2);
+                    border: 1px solid var(--bg-color-2);
+                }
 
-            .burger-menu {
-                width: max-content;
-                font-size: 20px;
-                cursor: pointer;
-                display: none;
+                .burger-menu {
+                    width: max-content;
+                    font-size: 20px;
+                    cursor: pointer;
+                    display: none;
+                }
             }
         }
-
-
     }
+
 
     .site-description {
         height: 90vh;
@@ -104,13 +116,18 @@ header {
         .left-side {
             display: flex;
             flex-direction: column;
-            row-gap: 25px;
+            row-gap: 10px;
             padding-top: 4rem;
 
             h1 {
                 font-size: 45px;
                 text-align: left;
                 font-weight: 900;
+            }
+
+            p{
+                color: var(--text-color-2);
+                font-size: 18px;
             }
 
             button {
@@ -130,13 +147,18 @@ header {
         }
 
         .right-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img {
-                width: 100%;
-                height: 100%;
+                width: 90%;
+                height: 90%;
             }
         }
     }
 }
+
+
 
 
 .active {
@@ -163,31 +185,33 @@ header {
 }
 
 @media (max-width:576px) {
- header{
-    padding-top: 0;
-    .logo {
-        .logo-inner {
-            font-size: inherit !important;
+    header {
+        padding-top: 0;
+
+        .logo {
+            .logo-inner {
+                font-size: inherit !important;
+            }
+        }
+
+        .menu {
+            column-gap: 10px !important;
+        }
+
+        .login-btn {
+            width: 60px !important;
+            height: 22px !important;
+            font-size: 9px !important;
+        }
+
+        .site-description {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 20px;
+
+            .col-6 {
+                width: 95%;
+            }
         }
     }
-
-    .menu {
-        column-gap: 10px !important;
-    }
-
-    .login-btn {
-        width: 60px !important;
-        height: 22px !important;
-        font-size: 9px !important;
-    }
-
-    .site-description{
-        flex-direction: column;
-        align-items: center;
-        row-gap: 20px;
-        .col-6{
-            width: 95%;
-        }
-    }
- }
 }

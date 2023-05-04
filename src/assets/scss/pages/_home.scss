@@ -1,0 +1,225 @@
+.section-header {
+    h1 {
+        text-align: center;
+        font-weight: 900;
+    }
+}
+
+.choose-us {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    gap: 20px;
+
+    .choose-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+        background-color: var(--bg-color-3);
+        padding: 30px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        b {
+            font-size: 20px;
+        }
+
+        .choose-desc {
+            text-align: center;
+        }
+
+        .start-link {
+            button {
+                padding: 0 10px;
+                height: 40px;
+                background-color: var(--bg-color-3);
+                border: 1px solid var(--text-color-3);
+                border-radius: 20px;
+                color: var(--text-color-3);
+            }
+        }
+
+        &:hover {
+            .start-link {
+                button {
+                    transition: all 0.5s;
+                    background-color: var(--bg-color-2);
+                    border: 1px solid var(--text-color-3);
+                    color: var(--text-color-1);
+                }
+            }
+        }
+    }
+
+}
+
+.plans {
+    align-items: center;
+    padding: 40px 0;
+
+    .img-plans {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 80%;
+            height: 60%;
+            object-fit: contain;
+        }
+    }
+
+    .desc-plans {
+        h1 {
+            font-weight: 700;
+        }
+
+        .plans-title {
+            color: var(--text-color-2);
+            margin-top: 3rem;
+        }
+
+        .about-title {
+            color: var(--text-color-5);
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+}
+
+.contact {
+    .left-contact {
+        background-color: var(--bg-color-4);
+        padding: 30px;
+
+        .header-contact {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            font-size: 18px;
+            margin-top: 3rem;
+
+            a {
+                color: var(--text-color-5);
+                text-decoration: none;
+            }
+        }
+
+        .social {
+            margin-top: 3rem;
+            display: flex;
+            column-gap: 15px;
+        }
+    }
+
+    .right-contact {
+        padding: 10px 20px;
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+
+            .line-1 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                input {
+                    width: 45%;
+                    height: 40px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid var(--text-color-2);
+                    padding-left: 5px;
+                }
+
+                textarea {
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid var(--text-color-2);
+                    height: 80px;
+                }
+            }
+
+            .line-2 {
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    padding: 5px 15px;
+                    border: none;
+                    background-color: var(--bg-color-2);
+                    color: var(--text-color-1);
+                    height: 40px;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 900px) {
+    .choose-us {
+        grid-template-columns: 40% 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .choose-us {
+        grid-template-columns: 90%;
+    }
+
+    .plans {
+        flex-direction: column;
+        row-gap: 25px;
+
+        .col-6 {
+            width: 90%;
+
+            h1 {
+                text-align: center !important;
+            }
+
+            .plans-title{
+                text-align: justify !important;
+            }
+        }
+    }
+
+    .contact{
+        flex-direction: column;
+
+        .col-5{
+            width: 100%;
+        }
+        .col-7{
+            width: 100%;
+        }
+
+        .line-1{
+            flex-direction: column;
+            align-items: center;
+              row-gap: 25px;
+            input{
+                width: 100% !important;
+            }
+        }
+    }
+}
