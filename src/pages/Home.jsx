@@ -3,10 +3,6 @@ import { useEffect } from "react";
 //data
 import data from "../db/fakeData"
 
-// AOS
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 //icons
 import { BsFillTelephoneForwardFill } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai'
@@ -23,13 +19,6 @@ import about from '../assets/img/about.png'
 
 
 const Home = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      easing: 'ease-in-out',
-      once: true
-    });
-  }, []);
   return (
     <div>
       <div id="why" className="container mt-5">
@@ -64,12 +53,10 @@ const Home = () => {
         </div>
 
         <div className="row plans">
-          <div data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine" className="col-6 img-plans" >
+          <div className="col-6 img-plans" >
             <img src={plan4} alt="" />
           </div>
-          <div data-aos="fade-left" className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <h1>To improve the user experience, add new features</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
@@ -78,22 +65,22 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-5">
-          <div data-aos="fade-right" className="col-6 desc-plans">
+          <div  className="col-6 desc-plans">
             <h1>Offer discounts and promotional offers to customers</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
             </p>
           </div>
-          <div data-aos="fade-left" className="col-6 img-plans">
+          <div  className="col-6 img-plans">
             <img src={plan2} alt="" />
           </div>
         </div>
 
         <div className="row plans mt-5">
-          <div data-aos="fade-right" className="col-6 img-plans">
+          <div  className="col-6 img-plans">
             <img src={plan3} alt="" />
           </div>
-          <div data-aos="fade-left" className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <h1>Add a mobile version of the platform</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
@@ -102,23 +89,23 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-5">
-          <div data-aos="fade-right" className="col-6 desc-plans">
+          <div  className="col-6 desc-plans">
             <h1>Add a mobile version of the platform</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
             </p>
           </div>
 
-          <div data-aos="fade-left" className="col-6 img-plans">
+          <div  className="col-6 img-plans">
             <img src={plan4} alt="" />
           </div>
         </div>
 
         <div className="row plans mt-5">
-          <div data-aos="fade-right" className="col-6 img-plans">
+          <div  className="col-6 img-plans">
             <img src={plan} alt="" />
           </div>
-          <div data-aos="fade-left" className="col-6 desc-plans">
+          <div  className="col-6 desc-plans">
             <h1>Analyze user data and database statistics to offer more effective recommendations.</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
@@ -135,10 +122,10 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-2">
-          <div data-aos="fade-right" className="col-6 img-plans">
+          <div  className="col-6 img-plans">
             <img src={about} alt="" />
           </div>
-          <div data-aos="fade-left" className="col-6 desc-plans">
+          <div  className="col-6 desc-plans">
             <p className="about-title">
               Our project offers a service that helps customers easily find the products they are looking for, thereby saving their time and energy. This also means e-commerce businesses can save on advertising costs.
             </p>
