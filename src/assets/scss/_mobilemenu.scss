@@ -1,0 +1,45 @@
+.mobile-menu-main{
+
+    .bg-mobile{
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+
+    .mobile-menu{
+        transition: all 0.5s;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--bg-color-2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        padding: 1rem 0.5rem;
+
+        .header-mobile{
+            width: 100%;
+            font-size: 20px;
+            color: var(--text-color-1);
+        }
+
+        .menu-mobile{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 2rem;
+            a{
+                color: var(--text-color-1);
+                text-decoration: none;
+                font-size: 16px;
+            }
+        }
+    }
+    
+}
+

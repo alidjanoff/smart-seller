@@ -1,9 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useRef, useState, useContext } from "react";
 
 // icons
-import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai'
-
+import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai';
 
 // image
 import desc from "../assets/img/newhead.png";
@@ -12,9 +11,11 @@ import english from "../assets/img/united-kingdom.png";
 
 // fakedata
 import data from "./../db/fakeData";
+import { useMainContext } from "../utils/MainContext";
 
 const Header = () => {
   const [isTurkish, setIsTurkish] = useState(true);
+
   const turkishRef = useRef();
   const englishRef = useRef();
 
@@ -22,11 +23,13 @@ const Header = () => {
     setIsTurkish(!isTurkish);
   };
 
+  const values = useMainContext();
+   
+  const openMenu = ()=>{
+    values.setIsOpen('0')
+  }
 
-
-
-
-
+  
   return (
     <header id="home" className="header">
       <div className="">
@@ -52,14 +55,12 @@ const Header = () => {
                   ))
                 )}
               </ul>
-
               <div className="language">
                 <img
                   ref={isTurkish ? turkishRef : englishRef}
                   src={isTurkish ? turk : english}
                   alt=""
-                />
-
+                /> 
                 <div className="language-submenu">
                   <a onClick={toggleLanguage}>
                     <img
@@ -79,7 +80,7 @@ const Header = () => {
                 <button className="login-btn">Sign up</button>
               </Link>
 
-              <div className="burger-menu">
+              <div onClick={openMenu} className="burger-menu">
                 <AiOutlineMenu />
               </div>
             </div>
@@ -106,3 +107,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

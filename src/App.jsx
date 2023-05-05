@@ -2,7 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 
 // Context
-import Context from "./utils/MainContext";
+import { MainContext } from "./utils/MainContext";
 
 // Pages
 import Home from "./pages/Home";
@@ -11,17 +11,20 @@ import NotFound from "./pages/NotFound";
 // Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { MobileMenu } from "./mobilemenu/MobileMenu";
 
 const App = () => {
   return (
-    <Context>
+    <MainContext>
       <Header />
+      <MobileMenu/>
+      <Home />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />
-    </Context>
+    </MainContext>
   );
 };
 
