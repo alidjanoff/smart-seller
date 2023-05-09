@@ -4,9 +4,8 @@ import React from 'react'
 import { useMainContext } from '../utils/MainContext'
 
 //fakedata
-import data from './../db/fakeData';
 import { Link } from 'react-router-dom';
-
+import { fakeHeader } from './../db/fakeHeader';
 
 export const MobileMenu = () => {
     const values = useMainContext();
@@ -24,11 +23,11 @@ export const MobileMenu = () => {
                 </div>
 
                 <div className="menu-mobile">
-                    {data.map(item => (
-                        item.menu.map(x => (
+                    {
+                        fakeHeader.map(x => (
                             <a key={x.id} href={x.href} >{x.item}</a>
                         ))
-                    ))}
+                    }
                 </div>
             </div>
         </div>

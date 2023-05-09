@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useEffect } from "react";
+
 //data
 import data from "../db/fakeData"
 
@@ -29,8 +30,8 @@ const Home = () => {
         </div>
 
         <div className="row choose-us mt-5">
-          {data.map(item => (
-            item.chooseUs.map(x => (
+          {
+            data.map(x => (
               <div data-aos="fade-up" key={x.id} className="choose-item">
                 <img src={x.img} alt="" />
                 <strong>{x.name}</strong>
@@ -41,7 +42,7 @@ const Home = () => {
                 </Link>
               </div>
             ))
-          ))}
+          }
         </div>
       </div>
 
@@ -65,19 +66,19 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-5">
-          <div  className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <h1>Offer discounts and promotional offers to customers</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
             </p>
           </div>
-          <div  className="col-6 img-plans">
+          <div className="col-6 img-plans">
             <img src={plan2} alt="" />
           </div>
         </div>
 
         <div className="row plans mt-5">
-          <div  className="col-6 img-plans">
+          <div className="col-6 img-plans">
             <img src={plan3} alt="" />
           </div>
           <div className="col-6 desc-plans">
@@ -89,23 +90,23 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-5">
-          <div  className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <h1>Add a mobile version of the platform</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
             </p>
           </div>
 
-          <div  className="col-6 img-plans">
+          <div className="col-6 img-plans">
             <img src={plan4} alt="" />
           </div>
         </div>
 
         <div className="row plans mt-5">
-          <div  className="col-6 img-plans">
+          <div className="col-6 img-plans">
             <img src={plan} alt="" />
           </div>
-          <div  className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <h1>Analyze user data and database statistics to offer more effective recommendations.</h1>
             <p className="plans-title">
               Lorem ipsum dolor sit amet consectetur. Tortor quis sed arcu pulvinar morbi egestas id gravida euismod.
@@ -122,10 +123,10 @@ const Home = () => {
         </div>
 
         <div className="row plans mt-2">
-          <div  className="col-6 img-plans">
+          <div className="col-6 img-plans">
             <img src={about} alt="" />
           </div>
-          <div  className="col-6 desc-plans">
+          <div className="col-6 desc-plans">
             <p className="about-title">
               Our project offers a service that helps customers easily find the products they are looking for, thereby saving their time and energy. This also means e-commerce businesses can save on advertising costs.
             </p>

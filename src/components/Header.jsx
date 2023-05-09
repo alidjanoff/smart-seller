@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useRef, useState, useContext } from "react";
 
+import { useMainContext } from "../utils/MainContext";
+
 // icons
 import { AiOutlineLogin, AiOutlineMenu } from 'react-icons/ai';
 
@@ -11,7 +13,9 @@ import english from "../assets/img/united-kingdom.png";
 
 // fakedata
 import data from "./../db/fakeData";
-import { useMainContext } from "../utils/MainContext";
+import { fakeHeader } from "../db/fakeHeader";
+
+
 
 const Header = () => {
   const [isTurkish, setIsTurkish] = useState(true);
@@ -24,12 +28,12 @@ const Header = () => {
   };
 
   const values = useMainContext();
-   
-  const openMenu = ()=>{
+
+  const openMenu = () => {
     values.setIsOpen('0')
   }
 
-  
+
   return (
     <header id="home" className="header">
       <div className="">
@@ -43,8 +47,8 @@ const Header = () => {
 
             <div className="menu col-9">
               <ul>
-                {data.map((item) =>
-                  item.menu.map((x) => (
+                {
+                  fakeHeader.map((x) => (
                     <li key={x.id}>
                       <a href={x.href}
                         className="menu-item"
@@ -53,14 +57,14 @@ const Header = () => {
                       </a>
                     </li>
                   ))
-                )}
+                }
               </ul>
               <div className="language">
                 <img
                   ref={isTurkish ? turkishRef : englishRef}
                   src={isTurkish ? turk : english}
                   alt=""
-                /> 
+                />
                 <div className="language-submenu">
                   <a onClick={toggleLanguage}>
                     <img
@@ -107,5 +111,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

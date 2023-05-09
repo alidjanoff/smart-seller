@@ -18,7 +18,6 @@ const App = () => {
     <MainContext>
       <Header />
       <MobileMenu/>
-      <Home />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="*" element={<NotFound />} /> */}

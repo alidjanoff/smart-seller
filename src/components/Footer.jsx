@@ -7,8 +7,7 @@ import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 
 // fakedata
-import data from "./../db/fakeData";
-
+import { fakeFooter } from '../db/fakeFooter';
 
 const Footer = () => {
   return (
@@ -22,15 +21,14 @@ const Footer = () => {
 
             <ul>
               {
-                data.map(item => (
-                  item.footerOne.map(x => (
-                    <li key={x.id}>
-                      <Link className='footer-link' to={x.to}>
-                        {x.item}
-                      </Link>
-                    </li>
-                  ))
+                fakeFooter.map(x => (
+                  <li key={x.id}>
+                    <Link className='footer-link' to={x.to}>
+                      {x.item}
+                    </Link>
+                  </li>
                 ))
+
               }
             </ul>
           </div>
@@ -38,39 +36,37 @@ const Footer = () => {
             <p className="header-col">
               Help
             </p>
-
             <ul>
               {
-                data.map(item => (
-                  item.footerOne.map(x => (
-                    <li key={x.id}>
-                      <Link className='footer-link' to={x.to}>
-                        {x.item}
-                      </Link>
-                    </li>
-                  ))
+                fakeFooter.map(x => (
+                  <li key={x.id}>
+                    <Link className='footer-link' to={x.to}>
+                      {x.item}
+                    </Link>
+                  </li>
                 ))
+
               }
             </ul>
+
           </div>
           <div className="col-3">
             <p className="header-col">
               Contact
             </p>
-
             <ul>
               {
-                data.map(item => (
-                  item.footerOne.map(x => (
-                    <li key={x.id}>
-                      <Link className='footer-link' to={x.to}>
-                        {x.item}
-                      </Link>
-                    </li>
-                  ))
+                fakeFooter.map(x => (
+                  <li key={x.id}>
+                    <Link className='footer-link' to={x.to}>
+                      {x.item}
+                    </Link>
+                  </li>
                 ))
+
               }
             </ul>
+
           </div>
         </div>
 

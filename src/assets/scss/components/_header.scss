@@ -21,7 +21,7 @@ header {
                     text-decoration: none;
                     font-size: 25px;
                     cursor: pointer;
-                    color: var(--text-color-5);
+                    color: $maintext5;
 
                     p {
                         margin-bottom: 0;
@@ -47,7 +47,7 @@ header {
 
                         .menu-item {
                             text-decoration: none;
-                            color: var(--text-color-5);
+                            color: $maintext5;
                         }
                     }
                 }
@@ -87,16 +87,16 @@ header {
                     width: 100px;
                     height: 35px;
                     border-radius: 20px;
-                    background-color: var(--bg-color-2);
+                    background-color: $mainbg;
                     border: none;
-                    color: var(--text-color-1);
+                    color: $maintext;
                     font-size: 16px;
                 }
 
                 .login-1{
-                    background-color: var(--text-color-1);
-                    color: var(--bg-color-2);
-                    border: 1px solid var(--bg-color-2);
+                    background-color: $maintext;
+                    color: $mainbg;
+                    border: 1px solid $mainbg;
                 }
 
                 .burger-menu {
@@ -126,7 +126,7 @@ header {
             }
 
             p{
-                color: var(--text-color-2);
+                color: $maintext2;
                 font-size: 18px;
             }
 
@@ -135,8 +135,8 @@ header {
                 height: 50px;
                 border-radius: 25px;
                 border: none;
-                background-color: var(--bg-color-2);
-                color: var(--text-color-1);
+                background-color: $mainbg;
+                color: $maintext;
                 font-size: 18px;
 
                 &:hover {
