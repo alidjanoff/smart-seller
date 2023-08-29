@@ -1,168 +1,211 @@
 header {
-    padding-top: 2rem;
+    overflow-x: hidden;
+    .logo_and_nav {
+        height: 75px;
+        width: 100%;
+        padding-left: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $mainbg2;
 
+        .logo {
+            width: 30%;
 
-
-    .header-container {
-        position: relative;
-
-        .header-row-1 {
-            height: 60px;
-            align-items: center;
-            transition: all 0.5s;
-
-            .logo {
-                display: flex;
-                align-items: center;
-
-                .logo-inner {
-                    display: flex;
-                    align-items: center;
-                    text-decoration: none;
-                    font-size: 25px;
-                    cursor: pointer;
-                    color: $maintext5;
-
-                    p {
-                        margin-bottom: 0;
-                        font-weight: 600;
-                    }
-                }
+            span {
+                font-size: 20px;
+                font-weight: bold;
             }
 
-            .menu {
+            .logo_1 {
+                color: $maintext6;
+            }
+
+            .logo_2 {
+                color: $maintext3;
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+
+            ul {
+                list-style: none;
                 display: flex;
-                align-items: center;
-                justify-content: flex-end;
                 column-gap: 20px;
+                padding-right: 15px;
 
-                ul {
-                    display: flex;
-                    column-gap: 25px;
-                    align-items: center;
-                    margin-bottom: 0;
-
-                    li {
-                        font-size: 16px;
-
-                        .menu-item {
-                            text-decoration: none;
-                            color: $maintext5;
-                        }
-                    }
-                }
-
-                .language {
-                    width: max-content;
-                    cursor: pointer;
-                    position: relative;
-
-                    img {
-                        width: 20px;
-                        height: 20px;
-                    }
-
-                    .language-submenu {
-                        width: 90px;
-                        height: 90px;
-                        position: absolute;
-                        padding-top: 5px;
-                        display: none;
-
-                        button {
-                            border: none;
-                            background: transparent;
-                        }
-                    }
+                .menu-item {
+                    font-size: 15px;
+                    color: $maintext6;
+                    font-weight: 400;
+                    transition: all 0.5s;
 
                     &:hover {
-                        .language-submenu {
-                            display: block;
+                        color: $maintext3;
+                    }
+                }
+            }
+
+            .language {
+                width: 95px;
+                height: 75px;
+                border-left: 1px solid $maintext7;
+                border-right: 1px solid $maintext7;
+                background-color: $mainbg6;
+
+                .main-lang {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 15px;
+                    width: 100%;
+                    height: 100%;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        cursor: pointer;
+                    }
+
+                    .lang-submenu {
+                        position: absolute;
+                        z-index: 1;
+                        transition: all 0.5s;
+                        background-color: #fff;
+                        top: -200%;
+                        opacity: 0;
+                        width: 230px;
+                        border-radius: 10px;
+                        padding: 20px;
+
+                        .lang-block {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 8px;
+                            align-items: flex-start;
+                        }
+
+                        a {
+                            width: 100%;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            column-gap: 10px;
+                            border-radius: 8px;
+                            padding-left: 8px;
+                            transition: all 0.5s;
+
+                            &:hover {
+                                background: $maintext4;
+                            }
+
+                            img {
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            span {
+                                color: $maintext5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .user-select {
+                width: 95px;
+                height: 75px;
+                border-right: 1px solid $maintext7;
+                background-color: $mainbg6;
+
+                .user-inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 15px;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    .user-profile {
+                        font-size: 25px;
+                    }
+                }
+
+                .user-sub {
+                    width: 230px;
+                    height: 150px;
+                    border-radius: 8px;
+                    background-color: $mainbg2;
+                    position: absolute;
+                    z-index: 1;
+                    top: -100%;
+                    right: 15px;
+                    opacity: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 20px;
+                    transition: all 0.5s;
+
+                    .tips-user {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 8px;
+
+                        .user-class {
+                            border-radius: 8px;
+                            width: 100%;
+                            height: 40px;
+                            transition: all 0.5s;
+                            color: $maintext5;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 8px;
+
+                            &:hover {
+                                background-color: $maintext4;
+                            }
                         }
                     }
 
-                }
+                    .btns-user {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
 
-                .login-btn {
-                    width: 100px;
-                    height: 35px;
-                    border-radius: 20px;
-                    background-color: $mainbg;
-                    border: none;
-                    color: $maintext;
-                    font-size: 16px;
-                }
-
-                .login-1{
-                    background-color: $maintext;
-                    color: $mainbg;
-                    border: 1px solid $mainbg;
-                }
-
-                .burger-menu {
-                    width: max-content;
-                    font-size: 20px;
-                    cursor: pointer;
-                    display: none;
-                }
-            }
-        }
-    }
-
-
-    .site-description {
-        height: 90vh;
-
-        .left-side {
-            display: flex;
-            flex-direction: column;
-            row-gap: 10px;
-            padding-top: 4rem;
-
-            h1 {
-                font-size: 45px;
-                text-align: left;
-                font-weight: 900;
-            }
-
-            p{
-                color: $maintext2;
-                font-size: 18px;
-            }
-
-            button {
-                width: 150px;
-                height: 50px;
-                border-radius: 25px;
-                border: none;
-                background-color: $mainbg;
-                color: $maintext;
-                font-size: 18px;
-
-                &:hover {
-                    transition: all 0.5s;
-                    transform: translateY(-5px);
+                        .btn-user {
+                            color: $maintext5;
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
         }
 
-        .right-side {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                width: 90%;
-                height: 90%;
-            }
-        }
+
     }
 }
 
 
+.open-lang {
+    opacity: 1 !important;
+    top: 90px !important;
+}
 
-
-.active {
-    font-weight: bold !important;
+.open-user {
+    opacity: 1 !important;
+    top: 90px !important;
 }
 
 

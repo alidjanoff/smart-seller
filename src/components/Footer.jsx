@@ -3,92 +3,54 @@ import { Link } from 'react-router-dom';
 
 // icons
 
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
-
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { BsTelephone } from 'react-icons/bs';
 
 // fakedata
 import { fakeFooter } from '../db/fakeFooter';
 
 const Footer = () => {
   return (
-    <div className='footer-container'>
-      <div className="container">
-        <div className="row footer-row">
-          <div className="col-3 footer-col">
-            <p className="header-col">
-              About us
-            </p>
-
-            <ul>
-              {
-                fakeFooter.map(x => (
-                  <li key={x.id}>
-                    <Link className='footer-link' to={x.to}>
-                      {x.item}
-                    </Link>
-                  </li>
-                ))
-
-              }
-            </ul>
+    <>
+      <div className='container-fluid footer-container'>
+        <div className="container foot-1">
+          <div className="footer-name">
+            <span className='f-1'>Smart</span><span className='f-2'>Sale</span>
           </div>
-          <div className="col-3">
-            <p className="header-col">
-              Help
-            </p>
-            <ul>
-              {
-                fakeFooter.map(x => (
-                  <li key={x.id}>
-                    <Link className='footer-link' to={x.to}>
-                      {x.item}
-                    </Link>
-                  </li>
-                ))
 
-              }
-            </ul>
+          <div className="rules">
+            <div className="rule-1">
+              <Link className='menu-1'>Istifade qaydalari</Link>
+            </div>
 
-          </div>
-          <div className="col-3">
-            <p className="header-col">
-              Contact
-            </p>
-            <ul>
-              {
-                fakeFooter.map(x => (
-                  <li key={x.id}>
-                    <Link className='footer-link' to={x.to}>
-                      {x.item}
-                    </Link>
-                  </li>
-                ))
-
-              }
-            </ul>
-
+            <div className="rule-2">
+              <a href="tel:+99455xxxxxxx">
+                <BsTelephone />  +99455xxxxxxxx
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="row footer-bottom">
-          <span>
-            © 2023  Privacy · Terms · Sitemap
-          </span>
-
+      <div className="container-fluid footer-container-2">
+        <div className="container foot-2">
+          <div className="copyright">Copyright © SmartSale® Foundry</div>
           <div className="social">
-            <a href="">
-              <FaFacebookF />
+            <a href='' className="social-item">
+              <FaFacebookF/>
             </a>
-            <a href="">
-              <FaInstagram />
+
+            <a href='' className="social-item">
+              <FaInstagram/>
             </a>
-            <a href="">
-              <FaTwitter />
+
+            <a href='' className="social-item">
+              <FaTwitter/>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

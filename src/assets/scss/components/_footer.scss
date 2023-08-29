@@ -1,65 +1,64 @@
 .footer-container {
-    background-color: $mainbg;
+    border-top: 1px solid #E4E4E4;
+    margin-top: 3rem;
 
-    .footer-row {
-        padding: 30px 0;
-        border-bottom: 1px solid $maintext;
+    .foot-1 {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        .header-col {
-            color: $maintext;
+        .footer-name {
+            width: max-content;
+            font-size: 20px;
             font-weight: bold;
-            font-size: 16px;
-        }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-            display: flex;
-            flex-direction: column;
-            row-gap: 15px;
-
-            .footer-link {
-                color: $maintext;
-                text-decoration: none;
+            .f-2 {
+                color: $maintext3;
             }
         }
-    }
 
-    .footer-bottom{
-        justify-content: space-between;
-        padding: 10px 0;
-        span{
-            width: max-content;
-            color: $maintext;
-        }
-
-        .social{
-            color: $maintext;
+        .rules {
             width: max-content;
             display: flex;
-            column-gap: 15px;
-            a{
-                color: $maintext;
-                text-decoration: none;
-                font-size: 18px;
+            column-gap: 20px;
+
+            .menu-1 {
+                color: $maintext5;
+                font-weight: bold;
+            }
+
+            a {
+                color: $maintext5;
+                font-weight: bold;
             }
         }
     }
 }
 
-@media (max-width: 576px) {
-    .footer-row{
-        flex-direction: column !important;
-
-        .col-3{
-            width: 100%;
-        }
-    }
-
-    .footer-bottom{
+.footer-container-2 {
+    background-color: $mainbg6;
+    .foot-2 {
+        display: flex;
         align-items: center;
-        span{
-            font-size: 10px;
+        justify-content: space-between;
+        height: 75px;
+        font-weight: bold;
+
+        .social{
+            display: flex;
+            column-gap: 10px;
+            .social-item{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: $mainbg2;
+                border: 1px solid $maintext5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $maintext5;
+            }
         }
     }
 }

@@ -3,22 +3,22 @@ import React from 'react'
 export const fakeHeader = [
     {
         "id": 1,
-        "item": "Home",
-        "href": "#home"
+        "item": "Niye biz?",
+        "to": "/home"
     },
     {
         "id": 2,
-        "item": "Why choose us",
-        "href": "#why"
-    },
-    {
-        "id": 3,
-        "item": "About us",
-        "href": "#about"
+        "item": "Haqqimizda",
+        "to": "/about"
     },
     {
         "id": 4,
-        "item": "Contact",
-        "href": "#contact"
+        "item": "Suallar",
+        "to": "/questions"
+    },
+    {
+        "id": 3,
+        "item": "Elaqe",
+        "to": "/contact"
     },
 ]

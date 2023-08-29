@@ -9,3 +9,13 @@
   text-decoration: none;
   font-family: 'Nunito', sans-serif;
 }
+
+.container-fluid{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  width: 95%;
+}
