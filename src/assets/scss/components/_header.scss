@@ -75,7 +75,7 @@ header {
 
                     .lang-submenu {
                         position: absolute;
-                        z-index: 1;
+                        z-index: 2;
                         transition: all 0.5s;
                         background-color: #fff;
                         top: -200%;
@@ -148,7 +148,7 @@ header {
                     border-radius: 8px;
                     background-color: $mainbg2;
                     position: absolute;
-                    z-index: 1;
+                    z-index: 2;
                     top: -100%;
                     right: 15px;
                     opacity: 0;

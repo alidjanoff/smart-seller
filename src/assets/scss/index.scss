@@ -6,6 +6,10 @@
 
 // * Pages
 @import "./pages/home";
+@import "./pages/contact";
+@import "./pages/about";
+@import "./pages/questions";
+@import "./pages/why";
 
 //mobile-menu
 @import "./mobilemenu";
@@ -14,6 +18,5 @@
 @import "./components/header";
 @import "./components/footer";
 @import "./components/signin";
-@import "./pages/contact";
-@import "./pages/about";
-@import "./pages/questions";
+@import "./components/write";
+

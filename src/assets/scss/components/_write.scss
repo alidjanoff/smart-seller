@@ -1,0 +1,123 @@
+.write {
+    position: fixed;
+    z-index: 1;
+    bottom: 60px;
+    right: 20px;
+
+    .write-inner {
+        width: 144px;
+        height: 52px;
+        background-color: $mainbg;
+        color: $maintext;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 28px;
+        position: relative;
+        column-gap: 8px;
+        cursor: pointer;
+
+        .icn-write {
+            font-size: 25px;
+        }
+
+        .message-sent {
+            width: 300px;
+            background-color: $mainbg2;
+            position: absolute;
+            z-index: 5;
+            bottom: -20%;
+            right: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            .header-message {
+                width: 100%;
+                height: 170px;
+                background-color: $mainbg;
+                background-image: url("../../img/topography\ 1.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 8px;
+                color: $maintext;
+
+                .man-images {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+
+                    .man-1 {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .man-2 {
+                        margin-left: -10px;
+                    }
+                }
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+                row-gap: 15px;
+                overflow-x: hidden;
+
+                input {
+                    width: 100%;
+                    outline: none;
+                    background: #F8F8F8;
+                    border-radius: 8px;
+                    height: 40px;
+                    border: none;
+                    font-size: 18px;
+                    padding-left: 8px;
+                }
+
+                textarea {
+                    width: 100%;
+                    border-radius: 8px;
+                    border: none;
+                    background: #F8F8F8;
+                    font-size: 18px;
+                    padding-left: 8px;
+                    padding-top: 8px;
+                    outline: none;
+                }
+
+                button {
+                    width: 100%;
+                    background: $mainbg;
+                    border-radius: 8px;
+                    height: 40px;
+                    border: none;
+                    font-size: 18px;
+                    color: $maintext;
+                }
+            }
+        }
+    }
+}
+
+.block-message{
+    display: block !important;
+}

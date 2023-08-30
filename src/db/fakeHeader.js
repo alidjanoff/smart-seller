@@ -4,7 +4,7 @@ export const fakeHeader = [
     {
         "id": 1,
         "item": "Niye biz?",
-        "to": "/home"
+        "to": "/why"
     },
     {
         "id": 2,
