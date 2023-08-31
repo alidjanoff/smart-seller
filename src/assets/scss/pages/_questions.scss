@@ -127,3 +127,11 @@
         }
     }
 }
+
+@media (max-width:900px) {
+    .inner-question{
+        input{
+            width: 100% !important;
+        }
+    }
+}

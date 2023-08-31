@@ -41,3 +41,9 @@
         }
     }
 }
+
+@media (max-width:900px) {
+    .why-content{
+        grid-template-columns: 300px 300px;
+    }
+}

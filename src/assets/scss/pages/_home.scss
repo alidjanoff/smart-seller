@@ -213,3 +213,20 @@
     color: $maintext2;
     margin-top: 12px;
 }
+
+@media (max-width:900px) {
+    .description {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+
+        .left-side {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            h1{
+                text-align: center;
+            }
+        }
+    }
+}

@@ -33,3 +33,9 @@
         color: $maintext8;
     }
 }
+
+@media (max-width:900px) {
+    .about-text{
+        width: 90%;
+    }
+}
