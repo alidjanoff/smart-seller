@@ -33,7 +33,7 @@ const Header = () => {
     values.setOpenForm('50%');
   }
 
-  const openRegister = ()=>{
+  const openRegister = () => {
     values.setOpenRegister('block');
     values.setOpenRegForm('50%')
   }
@@ -177,6 +177,12 @@ const Header = () => {
                     Qeydiyyat
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="burger-menu">
+              <div className="burger-inner">
+                <AiOutlineMenu />
               </div>
             </div>
           </div>

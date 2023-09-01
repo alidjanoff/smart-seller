@@ -155,13 +155,14 @@
                 border-radius: 40px;
             }
 
-            .back-log{
+            .back-log {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 column-gap: 15px;
                 cursor: pointer;
-                .btn-back{
+
+                .btn-back {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
@@ -171,8 +172,19 @@
                     align-items: center;
                 }
             }
-
-
         }
+    }
+}
+
+@media (max-width:576px) {
+    .signin-form {
+        width: 95% !important;
+        .inputs-form{
+            width: 100% !important;
+        }
+    }
+
+    .img-form {
+        display: none !important;
     }
 }

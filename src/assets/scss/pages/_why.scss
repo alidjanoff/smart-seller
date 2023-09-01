@@ -47,3 +47,9 @@
         grid-template-columns: 300px 300px;
     }
 }
+
+@media (max-width:576px) {
+    .why-content{
+        grid-template-columns: 95%;
+    }
+}

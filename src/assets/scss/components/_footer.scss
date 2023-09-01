@@ -62,3 +62,16 @@
         }
     }
 }
+
+@media (max-width:576px) {
+    .footer-name{
+        font-size: inherit !important;
+    }
+    .rules{
+        column-gap: 8px !important;
+
+        a{
+            font-size: 11px;
+        }
+    }
+}

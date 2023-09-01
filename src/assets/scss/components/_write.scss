@@ -121,3 +121,10 @@
 .block-message{
     display: block !important;
 }
+
+@media (max-width:576px) {
+    .message-sent{
+        right: 15px !important;
+        bottom: 60px !important;
+    }
+}

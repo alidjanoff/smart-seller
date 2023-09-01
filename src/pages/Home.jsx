@@ -72,7 +72,7 @@ const Home = () => {
 
               breakpoints={{
 
-                576: {
+                0: {
                   slidesPerView: 2,
                 },
                 650: {
@@ -81,7 +81,6 @@ const Home = () => {
                 1024: {
                   slidesPerView: 7,
                 },
-
               }}
 
             >
@@ -118,8 +117,8 @@ const Home = () => {
               slidesPerView={4}
               loop={true}
               navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next2',
+                prevEl: '.swiper-button-prev2',
               }}
               autoplay={{
                 delay: 3000,
@@ -128,7 +127,7 @@ const Home = () => {
 
               breakpoints={{
 
-                576: {
+                0: {
                   slidesPerView: 1,
                 },
                 650: {
@@ -138,6 +137,9 @@ const Home = () => {
                   slidesPerView: 4,
                 },
 
+                1400: {
+                  slidesPerView: 6,
+                },
               }}
 
 
@@ -160,8 +162,8 @@ const Home = () => {
 
             </Swiper>
             <div className="btns-swiper">
-              <div className="swiper-button-next"><AiOutlineArrowLeft /></div>
-              <div className="swiper-button-prev"><AiOutlineArrowRight /></div>
+              <div className="swiper-button-next2"><AiOutlineArrowLeft /></div>
+              <div className="swiper-button-prev2"><AiOutlineArrowRight /></div>
             </div>
           </div>
         </div>
