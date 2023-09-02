@@ -67,6 +67,51 @@
     }
 }
 
+.search-result {
+    margin-top: 3rem;
+
+    h1 {
+        text-align: center;
+    }
+
+    .products-search {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+
+        .link-product {
+            width: 80%;
+            height: 150px;
+            border: 1px solid $maintext4;
+            border-radius: 10px;
+            padding: 8px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 25px;
+
+            .name-and-link {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .name-search {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                a {
+                    text-decoration: underline;
+                    color: $maintext3;
+                }
+            }
+        }
+    }
+}
+
 .popular-brands {
     margin-top: 3rem;
     position: relative;
@@ -265,7 +310,7 @@
             padding-left: 10px;
             padding-right: 10px;
 
-            h1{
+            h1 {
                 text-align: center !important;
             }
         }
@@ -284,17 +329,21 @@
             }
         }
 
-        .right-side{
+        .right-side {
             width: 100%;
-            .search-product{
+
+            .search-product {
                 width: 95%;
                 height: 190px !important;
-                form{
+
+                form {
                     padding: 15px !important;
-                    input{
+
+                    input {
                         height: 60px !important;
                     }
-                    button{
+
+                    button {
                         height: 60px !important;
                     }
                 }
@@ -302,8 +351,16 @@
         }
     }
 
-    .popular-carousel{
-        .btns-swiper{
+    .link-product{
+        width: 100% !important;
+        padding: 8px 10px !important;
+        .name-search{
+            font-size: 16px !important;
+        }
+    }
+
+    .popular-carousel {
+        .btns-swiper {
             left: 0 !important;
             top: 100px !important;
         }

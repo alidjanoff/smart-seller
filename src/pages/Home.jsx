@@ -6,7 +6,7 @@ import 'swiper/css';
 
 //data
 import data from "../db/fakeData"
-
+import { searchResult } from "../db/searchResult";
 
 //icons
 import { BsFillTelephoneForwardFill } from 'react-icons/bs';
@@ -20,6 +20,7 @@ import plan4 from '../assets/img/FLO Mağazacılık svg.png'
 import plan2 from '../assets/img/Zara svg.png'
 import plan3 from '../assets/img/pana.png'
 import about from '../assets/img/about.png'
+
 
 
 
@@ -42,6 +43,36 @@ const Home = () => {
               <input type="text" placeholder="Mehsulun adi" />
               <button>Axtar</button>
             </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="container-fluid">
+        <div className="container search-result">
+          <h1>“Automatic Pet Feeter” axtarışından çıxan nəticələr</h1>
+
+          <div className="products-search">
+
+
+            {searchResult.map(x => (
+              <div key={x.id} className="link-product">
+                <div className="name-and-link">
+                  <div className="name-search">
+                    {x.name} {x.price}
+                  </div>
+
+                  <a className="link-search" href={x.href}>Sayta keç</a>
+                </div>
+                <div className="name-and-link">
+                  <div className="name-search">
+                    {x.location} {x.rating}
+                  </div>
+
+                  <a className="link-search" href={x.about}>Məhsul haqqında məlumat al</a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

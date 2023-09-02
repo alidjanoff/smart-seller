@@ -1,11 +1,13 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
 // context
 import { useMainContext } from '../utils/MainContext'
 
 //fakedata
-import { Link } from 'react-router-dom';
 import { fakeHeader } from './../db/fakeHeader';
+
+//icons
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export const MobileMenu = () => {
     const values = useMainContext();
@@ -25,9 +27,21 @@ export const MobileMenu = () => {
                 <div className="menu-mobile">
                     {
                         fakeHeader.map(x => (
-                            <a key={x.id} href={x.href} >{x.item}</a>
+                            <Link key={x.id} to={x.to} >{x.item}</Link>
                         ))
                     }
+                </div>
+
+                <div className="social">
+                    <a href="">
+                        <FaFacebookF />
+                    </a>
+                    <a href="">
+                        <FaTwitter />
+                    </a>
+                    <a href="">
+                        <FaInstagram />
+                    </a>
                 </div>
             </div>
         </div>

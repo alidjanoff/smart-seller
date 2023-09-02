@@ -56,61 +56,6 @@ const Header = () => {
 
   return (
     <header id="home">
-      {/* <div className="">
-        <div className="container header-container">
-          <div className="row header-row-1">
-            <div className="logo col-3">
-              <Link className="logo-inner" to="/home">
-                <p>SMARTSALE</p>
-              </Link>
-            </div>
-
-            <div className="menu col-9">
-              <ul>
-                {
-                  fakeHeader.map((x) => (
-                    <li key={x.id}>
-                      <a href={x.href}
-                        className="menu-item"
-                      >
-                        {x.item}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-
-              <Link to="/login">
-                <button className="login-btn login-1"><AiOutlineLogin /> Login</button>
-              </Link>
-
-              <Link to="/register">
-                <button className="login-btn">Sign up</button>
-              </Link>
-
-              <div onClick={openMenu} className="burger-menu">
-                <AiOutlineMenu />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="row site-description">
-          <div className="col-6 left-side">
-            <h1>Shopping made smarter  Let us do the research for you.</h1>
-            <p>Let us do the research for you.</p>
-            <Link to="/login">
-              <button>Get started</button>
-            </Link>
-          </div>
-          <div className="col-6 right-side">
-            <img src={desc} alt="" />
-          </div>
-        </div>
-      </div> */}
-
       <div className="main-header container-fluid">
         <div className="logo_and_nav">
           <div className="logo">
@@ -180,7 +125,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="burger-menu">
+            <div onClick={openMenu} className="burger-menu">
               <div className="burger-inner">
                 <AiOutlineMenu />
               </div>
