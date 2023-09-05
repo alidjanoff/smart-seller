@@ -11,6 +11,8 @@ import NotFound from "./pages/NotFound";
 // Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
