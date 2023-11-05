@@ -1,0 +1,22 @@
+// * Global styles
+@import "./base";
+
+//roots
+@import "./variables";
+
+// * Pages
+@import "./pages/home";
+@import "./pages/contact";
+@import "./pages/about";
+@import "./pages/questions";
+@import "./pages/why";
+
+//mobile-menu
+@import "./mobilemenu";
+
+// * Components
+@import "./components/header";
+@import "./components/footer";
+@import "./components/signin";
+@import "./components/write";
+

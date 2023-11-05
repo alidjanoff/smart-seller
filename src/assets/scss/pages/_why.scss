@@ -1,0 +1,55 @@
+.why-content {
+    width: 80%;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    gap: 30px;
+
+    .why-item {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 35px;
+        border-radius: 10px;
+        border: 1px solid $maintext4;
+        height: 350px;
+
+        .why-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            border: 1px solid $maintext4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                object-fit: contain;
+            }
+        }
+        .why-name{
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+        .desc-why{
+            color: $maintext4;
+        }
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .why-content{
+        grid-template-columns: 300px 300px;
+    }
+}
+
+@media (max-width:576px) {
+    .why-content{
+        grid-template-columns: 95%;
+    }
+}
