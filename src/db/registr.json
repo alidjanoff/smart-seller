@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "fullName": "Səma Kərimli",
+      "email": "semakerimli1993@gmail.com",
+      "password": "sadsadasdasd",
+      "agreeToTerms": true,
+      "id": 1
+    },
+    {
+      "fullName": "agabala",
+      "email": "agabala@gmail.com",
+      "password": "dfasdgasdfgz",
+      "agreeToTerms": true,
+      "id": 2
+    },
+    {
+      "fullName": "Səma Kərimli",
+      "email": "semakerimli1993@gmail.com",
+      "password": "sdfasfasfa",
+      "agreeToTerms": true,
+      "id": 3
+    },
+    {
+      "fullName": "Səma Kərimli",
+      "email": "semakerimli1993@gmail.com",
+      "password": "sdfasfasfa",
+      "agreeToTerms": true,
+      "id": 4
+    }
+  ]
+}

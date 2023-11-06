@@ -17,8 +17,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { MobileMenu } from "./mobilemenu/MobileMenu";
 import { Signin } from "./components/Signin";
-import { Register } from "./components/Register";
 import { Write } from "./components/Write";
+import { Register } from "./components/Register";
 
 
 
