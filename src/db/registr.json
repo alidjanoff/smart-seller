@@ -1,5 +1,11 @@
 {
   "users": [
-
+    {
+      "fullName": "aga",
+      "email": "agabala.93@gmail.com",
+      "password": "123456789",
+      "agreeToTerms": true,
+      "id": 1
+    }
   ]
 }

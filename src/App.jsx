@@ -13,12 +13,12 @@ import { About } from "./pages/About";
 import { Why } from "./pages/Why";
 
 // Components
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { MobileMenu } from "./mobilemenu/MobileMenu";
 import { Signin } from "./components/Signin";
 import { Write } from "./components/Write";
 import { Register } from "./components/Register";
+import RegistrSucces from "./components/RegistrSucces";
 
 
 
@@ -26,9 +26,9 @@ import { Register } from "./components/Register";
 const App = () => {
   return (
     <MainContext>
-      <Header />
       <Signin />
       <Register />
+      <RegistrSucces />
       <MobileMenu />
       <Routes>
         <Route path="/" element={<Home />} />

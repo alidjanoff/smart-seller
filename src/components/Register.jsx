@@ -16,6 +16,10 @@ export const Register = () => {
     values.setOpenRegister("none");
     values.setOpenRegForm("-200%");
   };
+  const openRegistrSucces = ()=>{
+    values.setOpenRegistrSucces('block');
+    values.setOpenRegFormSuc("50%");
+  }
 
 // json-a datanin gonderilmesi
 
@@ -55,7 +59,6 @@ export const Register = () => {
         console.error("Melumat gonderilmedi:", error);
       });
   };
-
   return (
     <>
       <div style={{ display: values.openRegister }} className="signin">
@@ -108,10 +111,9 @@ export const Register = () => {
               </div>
             </div>
 
-            <button className="btn-sign">Sign in</button>
+            <button onClick={openRegistrSucces}  className="btn-sign">Sign in</button>
             <button className="btn-sign-g">Sign in with Google</button>
           </form>
-
           <div onClick={closeRegister} className="close">
             <AiOutlineCloseCircle />
           </div>
