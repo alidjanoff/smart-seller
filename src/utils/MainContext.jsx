@@ -14,6 +14,7 @@ export const MainContext = ({ children }) => {
   const [openRegFormSuc, setOpenRegFormSuc] = useState('-200%')
   const [dataName,setDataName] = useState("")
 
+
   const globalStates = { data, setData , isOpen, setIsOpen, openSingin, setOpenSingin, openForm, setOpenForm,
   openRegister, setOpenRegister, openRegForm, setOpenRegForm,openRegistrSucces,setOpenRegistrSucces,openRegFormSuc,setOpenRegFormSuc,dataName,setDataName};
 

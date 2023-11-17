@@ -1,4 +1,4 @@
-import React, { useRef,createContext,useState } from "react";
+import React, { useRef, createContext, useState } from "react";
 import { useMainContext } from "../utils/MainContext";
 // image
 //icons
@@ -9,9 +9,9 @@ import Header from "./Header";
 export const MyContext = createContext();
 
 export const Signin = () => {
-    const values = useMainContext();
-    const [userData, setUserData] = useState(null);
-    
+  const values = useMainContext();
+  const [userData, setUserData] = useState(null);
+
   /////////////////////////////////
   const emailInput = useRef();
   const passwordInput = useRef();
@@ -23,12 +23,11 @@ export const Signin = () => {
     try {
       const response = await fetch("http://localhost:3001/users");
       let data = await response.json();
-
       data.forEach((user) => {
         if (user.email === email && user.password === password) {
-          const dataName = user.fullName
+          const dataName = user.fullName;
           setUserData(dataName);
-          closeForm()
+          closeForm();
         } else {
           alert("E-poçt və şifrə uyğun deyil");
         }
@@ -37,7 +36,6 @@ export const Signin = () => {
       console.error("Məlumatın lınması zamanı xəta baş verdi: ", error);
     }
   };
-
 
   //////////////////////////////////
 
@@ -59,9 +57,9 @@ export const Signin = () => {
   };
   return (
     <>
-    <div >
-      <Header userData={userData}/>     
-    </div>
+      <div>
+        <Header userData={userData} />
+      </div>
       <div style={{ display: values.openSingin }} className="signin">
         <div onClick={closeForm} className="bg-signin"></div>
       </div>

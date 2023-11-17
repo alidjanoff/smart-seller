@@ -1,0 +1,85 @@
+.filter-back{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  
+  .filter{
+      width: 90%;
+      background-color: #F5F5F5;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      border-radius: 30px;
+      h2{
+        text-align: center;
+      }
+      select{
+        width: 150px;
+        padding: 10px 15px;
+        border:1px solid #3330304b;
+      border-radius: 30px;
+
+      }
+    .dataFilter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .dataCont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            .dataMap{
+                display: flex;
+                flex-direction: column;
+                border:1px solid #3330304b;
+                background-color: white;
+                border-radius: 30px;
+                padding: 20px;
+                gap: 20px;
+                .img{
+                    background-color: #F5F5F5;
+                    border-radius: 30px;
+                    padding: 50px;
+                }
+                .name-rty{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    .star-rty{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 5px;
+                        .star{
+                            font-size: 20px;
+                            color:gold
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+    button{
+        background-color: $mainbg;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.267);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 200ms;
+        &:hover{
+            background-color: #4286f4cc;
+        }
+    }
+  }
+}

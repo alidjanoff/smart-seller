@@ -1,0 +1,84 @@
+.payBack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    width: 70%;
+    margin: 30px;
+  }
+  .pay {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    border-radius: 30px;
+    .payMetod {
+      width: 40%;
+      display: flex;
+      margin: 20px 0;
+      gap: 5px;
+      .card {
+        width: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.26);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 20px 5px;
+      }
+
+      p {
+        cursor: pointer;
+      }
+      .openPay {
+        color: blue;
+      }
+    }
+    .payMetodView {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        label {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          input {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.26);
+          }
+          .submit {
+            width: 100%;
+            padding: 10px;
+            background-color: $mainbg;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 200ms;
+            cursor: pointer;
+            &:hover {
+              background-color: rgba(34, 34, 206, 0.534);
+            }
+          }
+        }
+      }
+    }
+  }
+}

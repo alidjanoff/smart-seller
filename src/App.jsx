@@ -1,3 +1,5 @@
+import React from "react";
+
 // Router
 import { Route, Routes } from "react-router-dom";
 
@@ -19,9 +21,9 @@ import { Signin } from "./components/Signin";
 import { Write } from "./components/Write";
 import { Register } from "./components/Register";
 import RegistrSucces from "./components/RegistrSucces";
-
-
-
+import Vipbuy from "./pages/Vipbuy";
+import Pay from "./pages/Pay";
+import OldSearch from "./pages/OldSearch";
 
 const App = () => {
   return (
@@ -36,6 +38,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/questions" element={<Questions />} />
         <Route path="/why" element={<Why />} />
+        <Route path="/vipbuy" element={<Vipbuy />} />
+        <Route path="/pay" element={<Pay />} />
+        <Route path="/search" element={<OldSearch />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Write />

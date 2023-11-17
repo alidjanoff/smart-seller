@@ -1,0 +1,104 @@
+.productAbout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .contentProduct {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.082);
+    border-radius: 20px;
+
+    .leftContent {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding-left: 10px;
+      h4 {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      p {
+        font-size: 24px;
+      }
+      a {
+        color: white;
+        background-color: $mainbg;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 18px;
+        transition: 500ms;
+        &:hover {
+          background-color: rgba(0, 60, 255, 0.993);
+        }
+      }
+      .reyting{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .star{
+            color: gold;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+      }
+      .price{
+        background-color: rgba(0, 0, 0, 0.144);
+        padding: 5px 10px;
+        border-radius: 30px;
+      }
+    }
+    .rightContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .customerComments{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.082);
+    border-radius: 20px;
+    padding: 20px ;
+    margin: 10px 0;
+    .commentData{
+        width: 550px;
+        display: flex;
+        .leftData{
+            padding: 10px;
+            img{
+                background-color: rgba(0, 0, 0, 0.137);
+                padding: 15px;
+                border-radius: 50%;
+            }
+        }
+        .rightData{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .reyting{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .star{
+                    color: gold;
+                    font-size: 20px;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+  }
+}

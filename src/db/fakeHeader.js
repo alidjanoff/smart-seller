@@ -20,5 +20,5 @@ export const fakeHeader = [
         "id": 3,
         "item": "Elaqe",
         "to": "/contact"
-    },
+    }
 ]

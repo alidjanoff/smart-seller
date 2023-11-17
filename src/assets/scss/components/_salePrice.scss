@@ -1,0 +1,8 @@
+.salePrice{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .saleStyle{
+        text-decoration: line-through;
+    }
+}

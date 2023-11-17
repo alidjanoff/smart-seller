@@ -45,6 +45,9 @@ const Header = ({ userData }) => {
     subUser.current.classList.toggle("open-user");
     sub.current.classList.remove("open-lang");
   };
+  const vipContent = ()=>{
+    alert('heloooooooo')
+  }
 
   return (
     <header id="home">
@@ -66,6 +69,9 @@ const Header = ({ userData }) => {
                   </Link>
                 </li>
               ))}
+              <li>
+                {userData&&<Link to='/search' className="menu-item">Keçmiş axtarışlar</Link>}
+              </li>
             </ul>
 
             <div ref={ref} onClick={openSubLang} className="language">
@@ -80,7 +86,7 @@ const Header = ({ userData }) => {
                     </a>
 
                     <a href="">
-                      <img src={english} alt="" /> <span>EN</span>
+                      <img src={english} alt="" /> <span>RU</span>
                     </a>
                   </div>
                 </div>
@@ -89,20 +95,29 @@ const Header = ({ userData }) => {
 
             <div onClick={openUser} ref={user} className="user-select">
               <div className="user-inner">
-                {userData?(<FcManager style={{fontSize:30}}/>):(<AiOutlineUser className="user-profile" /> )}
-                 <IoIosArrowDown />
+                {userData ? (
+                  <FcManager style={{ fontSize: 30 }} />
+                ) : (
+                  <AiOutlineUser className="user-profile" />
+                )}
+                <IoIosArrowDown />
               </div>
 
               <div ref={subUser} className="user-sub">
-                <div className="tips-user">
-                  <Link className="user-class">VIP</Link>
-                </div>
+                {userData && (
+                  <div className="tips-user">
+                    <Link to='/vipbuy' onClick={vipContent} className="user-class">VIP</Link>
+                  </div>
+                )}
                 {userData ? (
-                  <div className="succes-user">{userData}</div>
+                  <div className="user-cabinet">
+                    <div className="succes-user">{userData}</div>
+                    <button className="cabinet">Çıxış</button>
+                  </div>
                 ) : (
                   <div className="btns-user">
                     <div onClick={openSignin} className="btn-user">
-                      Giris
+                      Giriş
                     </div>
                     <div onClick={openRegister} className="btn-user">
                       Qeydiyyat

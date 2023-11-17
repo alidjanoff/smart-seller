@@ -145,7 +145,7 @@ header {
 
                 .user-sub {
                     width: 230px;
-                    height: 150px;
+                    height: 120px;
                     border-radius: 8px;
                     background-color: $mainbg2;
                     position: absolute;
@@ -171,12 +171,30 @@ header {
                             transition: all 0.5s;
                             color: $maintext5;
                             display: flex;
+                            justify-content: center;
                             align-items: center;
                             padding-left: 8px;
+                            margin: 5px 0;
 
                             &:hover {
                                 background-color: $maintext4;
                             }
+                        }
+                    }
+                    .user-cabinet{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        border: 1px solid rgba(129, 126, 126, 0.205) ;
+                        padding: 4px;
+                        border-radius: 10px;
+                        .cabinet{
+                            width: 50px;
+                            border: none;
+                            background-color: $maintext3;
+                            color: white;
+                            border-radius: 10px;
+                            cursor: pointer;
                         }
                     }
 

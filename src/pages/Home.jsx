@@ -20,12 +20,15 @@ import plan4 from '../assets/img/FLO Mağazacılık svg.png'
 import plan2 from '../assets/img/Zara svg.png'
 import plan3 from '../assets/img/pana.png'
 import about from '../assets/img/about.png'
+import Sales from "../components/Sales";
+import ProductAbout from "../components/ProductAbout";
+import Offers from "../components/Offers";
+import Filter from "../components/Filter";
 
 
 
 
 const Home = () => {
-
   return (
     <div>
       <div className="description container-fluid">
@@ -46,15 +49,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
-      <div className="container-fluid">
+     <Sales />
+      <ProductAbout />
+      <Filter />
+      <Offers />
+      <div className="container-fluid" style={{display:'none'}}>
         <div className="container search-result">
           <h1>“Automatic Pet Feeter” axtarışından çıxan nəticələr</h1>
-
           <div className="products-search">
-
-
             {searchResult.map(x => (
               <div key={x.id} className="link-product">
                 <div className="name-and-link">
