@@ -1,0 +1,26 @@
+.navbarAdmin {
+  width: 100%;
+  display: flex;
+  .leftNav {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.057);
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    p {
+      font-size: 18px;
+      font-weight: 800;
+      span {
+        color: #307efd;
+      }
+    }
+  }
+  .rightNav {
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    height: 50px;
+  }
+}

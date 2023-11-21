@@ -1,4 +1,4 @@
-import React, { useRef, createContext, useState } from "react";
+import React, { useRef, createContext, useState, useEffect } from "react";
 import { useMainContext } from "../utils/MainContext";
 // image
 //icons
@@ -6,12 +6,17 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
 import img from "../assets/img/Abstraction.png";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 export const MyContext = createContext();
 
-export const Signin = () => {
+export const Signin = ({ setIsAdminPanel }) => {
   const values = useMainContext();
   const [userData, setUserData] = useState(null);
 
+  // const [role, setRole] = useState(null);
+  const navigate = useNavigate();
+
+  
   /////////////////////////////////
   const emailInput = useRef();
   const passwordInput = useRef();
@@ -21,21 +26,33 @@ export const Signin = () => {
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
     try {
-      const response = await fetch("http://localhost:3001/users");
+      const response = await fetch(
+        `http://localhost:3001/users?email=${email}&password=${password}`
+      );
       let data = await response.json();
-      data.forEach((user) => {
-        if (user.email === email && user.password === password) {
-          const dataName = user.fullName;
-          setUserData(dataName);
-          closeForm();
-        } else {
-          alert("E-poçt və şifrə uyğun deyil");
-        }
-      });
+
+      if (!data.length) {
+        return alert("E-poçt və şifrə uyğun deyil");
+      }
+
+      localStorage.setItem("user", JSON.stringify(data))
+      const user = JSON.parse(localStorage.getItem("user"));
+      console.log("user", user);
+
+      const dataName = user[0].fullName;
+      setUserData(dataName);
+      if (user[0].role === "admin") {
+        setIsAdminPanel(true);
+        navigate("/admin");
+      } else {
+        setIsAdminPanel(false);
+      }
+      closeForm();
     } catch (error) {
       console.error("Məlumatın lınması zamanı xəta baş verdi: ", error);
     }
   };
+
 
   //////////////////////////////////
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Router
 import { Route, Routes } from "react-router-dom";
@@ -24,28 +24,43 @@ import RegistrSucces from "./components/RegistrSucces";
 import Vipbuy from "./pages/Vipbuy";
 import Pay from "./pages/Pay";
 import OldSearch from "./pages/OldSearch";
+import HomeAdmin from "./adminPanel/pageAdmin/HomeAdmin";
 
 const App = () => {
+  const [isAdminPanel, setIsAdminPanel] = useState(false);
   return (
-    <MainContext>
-      <Signin />
-      <Register />
-      <RegistrSucces />
-      <MobileMenu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/questions" element={<Questions />} />
-        <Route path="/why" element={<Why />} />
-        <Route path="/vipbuy" element={<Vipbuy />} />
-        <Route path="/pay" element={<Pay />} />
-        <Route path="/search" element={<OldSearch />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-      <Write />
-      <Footer />
-    </MainContext>
+    <>
+      {!isAdminPanel ? (
+        <MainContext>
+          <Signin
+            isAdminPanel={isAdminPanel}
+            setIsAdminPanel={setIsAdminPanel}
+          />
+          <Register />
+          <RegistrSucces />
+          <MobileMenu />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/questions" element={<Questions />} />
+            <Route path="/why" element={<Why />} />
+            <Route path="/vipbuy" element={<Vipbuy />} />
+            <Route path="/pay" element={<Pay />} />
+            <Route path="/search" element={<OldSearch />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+          <Write />
+          <Footer />
+        </MainContext>
+      ) : (
+        <MainContext>
+          <Routes>
+            <Route path="/admin" element={<HomeAdmin />} />
+          </Routes>
+        </MainContext>
+      )}
+    </>
   );
 };
 

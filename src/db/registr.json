@@ -1,3 +1,4 @@
+
 {
   "users": [
     {
@@ -5,7 +6,16 @@
       "email": "agabala.93@gmail.com",
       "password": "123456789",
       "agreeToTerms": true,
-      "id": 1
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "fullName": "Feqan",
+      "email": "feqan.93@gmail.com",
+      "password": "123456789",
+      "agreeToTerms": true,
+      "id": 2,
+      "role": "user"
     }
   ]
 }

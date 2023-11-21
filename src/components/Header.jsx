@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState, useContext } from "react";
 import { useMainContext } from "../utils/MainContext";
 
@@ -16,6 +16,7 @@ import english from "../assets/img/united-kingdom.png";
 import { fakeHeader } from "../db/fakeHeader";
 
 const Header = ({ userData }) => {
+  console.log(userData);
   const values = useMainContext();
   const openMenu = () => {
     values.setIsOpen("0");
@@ -45,9 +46,9 @@ const Header = ({ userData }) => {
     subUser.current.classList.toggle("open-user");
     sub.current.classList.remove("open-lang");
   };
-  const vipContent = ()=>{
-    alert('heloooooooo')
-  }
+  const vipContent = () => {
+    alert("heloooooooo");
+  };
 
   return (
     <header id="home">
@@ -70,7 +71,11 @@ const Header = ({ userData }) => {
                 </li>
               ))}
               <li>
-                {userData&&<Link to='/search' className="menu-item">Keçmiş axtarışlar</Link>}
+                {userData && (
+                  <Link to="/search" className="menu-item">
+                    Keçmiş axtarışlar
+                  </Link>
+                )}
               </li>
             </ul>
 
@@ -106,7 +111,13 @@ const Header = ({ userData }) => {
               <div ref={subUser} className="user-sub">
                 {userData && (
                   <div className="tips-user">
-                    <Link to='/vipbuy' onClick={vipContent} className="user-class">VIP</Link>
+                    <Link
+                      to="/vipbuy"
+                      onClick={vipContent}
+                      className="user-class"
+                    >
+                      VIP
+                    </Link>
                   </div>
                 )}
                 {userData ? (

@@ -1,0 +1,58 @@
+.homeAdminBack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .homeAdmin {
+    width: 90%;
+    .main {
+      width: 100%;
+      display: flex;
+      .leftMain {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        gap: 40px;
+        padding: 40px 0;
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          .exit {
+            margin-top: 20px;
+          }
+          li {
+            padding: 10px 30px;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.056);
+              }
+            a {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 10px;
+              color: black;
+
+            }
+          }
+        }
+      }
+      .rightMain {
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1px solid rgba(0, 0, 0, 0.07);
+        background-color: rgba(0, 0, 0, 0.057);
+        overflow-y:scroll;
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.homeContent{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+    
+    .usersCount{
+        max-width: 900px;
+        background-color: rgba(0, 110, 255, 0.137);
+        border: 2px solid #1877F2;
+        border-radius: 10px;
+        padding: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        .leftuC{
+            p{
+                width: 100%;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                padding: 15px;
+                background-color: #1877F2;
+                border-radius: 10px;
+                color: white;
+                font-size: 20px;
+                
+            }
+            
+        }
+        .rightuC{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p:nth-child(2){
+                font-weight: 800;
+            }
+        }
+    }
+    .usersTime{
+        background-color: #db5d1415;
+        border: 2px solid #DB5C14;
+        .leftuT{
+            p{
+                background-color:#DB5C14 ;
+            }
+        }
+    }
+    .vebView{
+        max-width: 900px;
+        display: flex;
+        .leftW{
+            width: 50%;
+            background-color:#8133ff18;
+            border: 2px solid #8133FF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-right: 5px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            .leftWC{
+                p{
+                    width: 100%;
+                    display: flex;
+                    justify-content:center;
+                    align-items: center;
+                    padding: 15px;
+                    background-color: #8133FF;
+                    border-radius: 10px;
+                    color: white;
+                    font-size: 20px; 
+                }
+            }
+            .rightWC{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                p:nth-child(2){
+                    font-weight: 800;
+                }
+            }
+            
+        }
+        .rightW{
+            background-color:#1caa4417;
+            border: 2px solid #1CAA44;
+            margin-left: 5px;
+            .leftWC{
+                p{
+                    background-color: #1CAA44;
+                }
+            }
+        }
+    }
+
+    .dataReklam{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 2px solid rgba(0, 0, 0, 0.071);
+        border-radius: 10px;
+        padding: 15px;
+        table{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        tr{
+            display: flex;
+            gap: 5px;
+            border-top: 1px solid rgba(0, 0, 0, 0.064);
+        }
+    }
+}
