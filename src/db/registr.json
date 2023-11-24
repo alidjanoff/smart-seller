@@ -1,4 +1,3 @@
-
 {
   "users": [
     {
@@ -16,6 +15,13 @@
       "agreeToTerms": true,
       "id": 2,
       "role": "user"
+    },
+    {
+      "fullName": "ferid",
+      "email": "ferid.93@gmail.com",
+      "password": "123456789",
+      "agreeToTerms": true,
+      "id": 3
     }
   ]
 }

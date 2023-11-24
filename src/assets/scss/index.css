@@ -1555,7 +1555,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   padding-top: 8px;
   outline: none;
 }
-.write .write-inner .message-sent form button {
+.write .write-inner .message-sent form .button {
   width: 100%;
   background: #4285f4;
   border-radius: 8px;
@@ -1563,6 +1563,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   border: none;
   font-size: 18px;
   color: #fff;
+  cursor: pointer;
 }
 
 .block-message {
@@ -1627,6 +1628,11 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   align-items: center;
   border: 2px solid rgba(0, 0, 0, 0.082);
   border-radius: 20px;
+}
+@media (max-width: 992px) {
+  .productAbout .contentProduct {
+    flex-direction: column;
+  }
 }
 .productAbout .contentProduct .leftContent {
   height: 300px;
@@ -1748,7 +1754,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
 }
 .container-off .top-container h2,
 .container-off .top-container p {
-  width: 500px;
+  max-width: 500px;
 }
 .container-off .top-container button {
   padding: 15px 25px;
@@ -1770,6 +1776,11 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   display: flex;
   gap: 20px;
 }
+@media (max-width: 992px) {
+  .container-off .bottom-container {
+    flex-direction: column;
+  }
+}
 .container-off .bottom-container .of-left {
   background-image: url("../../img/offers1.svg");
 }
@@ -1783,16 +1794,18 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 49%;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 40px;
   gap: 40px;
   border-radius: 30px;
 }
+@media (max-width: 992px) {
+  .container-off .bottom-container .off {
+    width: 100%;
+  }
+}
 .container-off .bottom-container .off h2,
 .container-off .bottom-container .off p {
-  width: 400px;
+  max-width: 400px;
   color: white;
 }
 .container-off .bottom-container .off button {

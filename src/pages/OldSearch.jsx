@@ -1,34 +1,21 @@
-import React from 'react'
+import React, { createContext } from 'react'
+import { useMainContext } from "../utils/MainContext";
+export const MyContext = createContext()
+
 
 const OldSearch = () => {
-  return (
+    const values = useMainContext();
+    return (
     <>
     <section className="searchBack">
         <h2>Keçmiş axtarışlar</h2>
         <div className="oldSearch">
-            <div className="searches">
-                <p>Automatic Pet Feeter -  <span>65$</span></p>
-                <a href="#">Məhsul səhifəsinə keç</a>
-            </div>
-            <div className="searches">
-                <p>Automatic Pet Feeter -  <span>65$</span></p>
-                <a href="#">Məhsul səhifəsinə keç</a>
-            </div>
-            
-            <div className="searches">
-                <p>Automatic Pet Feeter -  <span>65$</span></p>
-                <a href="#">Məhsul səhifəsinə keç</a>
-            </div>
-            
-            <div className="searches">
-                <p>Automatic Pet Feeter -  <span>65$</span></p>
-                <a href="#">Məhsul səhifəsinə keç</a>
-            </div>
-            
-            <div className="searches">
-                <p>Automatic Pet Feeter -  <span>65$</span></p>
-                <a href="#">Məhsul səhifəsinə keç</a>
-            </div>
+            {values.searchResults.map((x)=>(
+            <div className="searches" key={x.id}>
+            <p>{x.name} <span>{x.price}</span></p>
+            <a href="#">Məhsul səhifəsinə keç</a>
+        </div>
+            ))}
         </div>
     </section>
     </>

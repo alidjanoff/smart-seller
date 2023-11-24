@@ -1,23 +1,17 @@
-import React, { useRef, createContext, useState, useEffect } from "react";
+import React, { useRef, createContext} from "react";
 import { useMainContext } from "../utils/MainContext";
 // image
 //icons
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import img from "../assets/img/Abstraction.png";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
 export const MyContext = createContext();
 
 export const Signin = ({ setIsAdminPanel }) => {
   const values = useMainContext();
-  const [userData, setUserData] = useState(null);
-
-  // const [role, setRole] = useState(null);
   const navigate = useNavigate();
-
-  
-  /////////////////////////////////
   const emailInput = useRef();
   const passwordInput = useRef();
 
@@ -30,29 +24,27 @@ export const Signin = ({ setIsAdminPanel }) => {
         `http://localhost:3001/users?email=${email}&password=${password}`
       );
       let data = await response.json();
-
       if (!data.length) {
         return alert("E-poçt və şifrə uyğun deyil");
       }
-
-      localStorage.setItem("user", JSON.stringify(data))
+      localStorage.setItem("user", JSON.stringify(data));
       const user = JSON.parse(localStorage.getItem("user"));
-      console.log("user", user);
-
+      
       const dataName = user[0].fullName;
-      setUserData(dataName);
+      values.setUserData(dataName);
       if (user[0].role === "admin") {
         setIsAdminPanel(true);
         navigate("/admin");
       } else {
         setIsAdminPanel(false);
+        values.setOffersData(dataName)
       }
       closeForm();
     } catch (error) {
-      console.error("Məlumatın lınması zamanı xəta baş verdi: ", error);
+      console.error("Məlumatın alınması zamanı xəta baş verdi: ", error);
     }
   };
-
+  
 
   //////////////////////////////////
 
@@ -75,7 +67,7 @@ export const Signin = ({ setIsAdminPanel }) => {
   return (
     <>
       <div>
-        <Header userData={userData} />
+        <Header/>
       </div>
       <div style={{ display: values.openSingin }} className="signin">
         <div onClick={closeForm} className="bg-signin"></div>

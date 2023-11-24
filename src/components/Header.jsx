@@ -15,8 +15,7 @@ import english from "../assets/img/united-kingdom.png";
 // fakedata
 import { fakeHeader } from "../db/fakeHeader";
 
-const Header = ({ userData }) => {
-  console.log(userData);
+const Header = () => {
   const values = useMainContext();
   const openMenu = () => {
     values.setIsOpen("0");
@@ -49,6 +48,11 @@ const Header = ({ userData }) => {
   const vipContent = () => {
     alert("heloooooooo");
   };
+  const exitAccount = ()=>{
+    localStorage.getItem("user")
+    localStorage.removeItem("user")
+    window.location.reload()
+  }
 
   return (
     <header id="home">
@@ -71,7 +75,7 @@ const Header = ({ userData }) => {
                 </li>
               ))}
               <li>
-                {userData && (
+                {values.userData && (
                   <Link to="/search" className="menu-item">
                     Keçmiş axtarışlar
                   </Link>
@@ -100,7 +104,7 @@ const Header = ({ userData }) => {
 
             <div onClick={openUser} ref={user} className="user-select">
               <div className="user-inner">
-                {userData ? (
+                {values.userData ? (
                   <FcManager style={{ fontSize: 30 }} />
                 ) : (
                   <AiOutlineUser className="user-profile" />
@@ -109,7 +113,7 @@ const Header = ({ userData }) => {
               </div>
 
               <div ref={subUser} className="user-sub">
-                {userData && (
+                {values.userData && (
                   <div className="tips-user">
                     <Link
                       to="/vipbuy"
@@ -120,10 +124,10 @@ const Header = ({ userData }) => {
                     </Link>
                   </div>
                 )}
-                {userData ? (
+                {values.userData ? (
                   <div className="user-cabinet">
-                    <div className="succes-user">{userData}</div>
-                    <button className="cabinet">Çıxış</button>
+                    <div className="succes-user">{values.userData}</div>
+                    <button onClick={exitAccount} className="cabinet">Çıxış</button>
                   </div>
                 ) : (
                   <div className="btns-user">

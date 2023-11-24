@@ -29,7 +29,7 @@
     }
     h2,
     p {
-      width: 500px;
+      max-width: 500px;
     }
     button {
       padding: 15px 25px;
@@ -51,6 +51,9 @@
     width: 90%;
     display: flex;
     gap: 20px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+  }
     .of-left {
       background-image: url("../../img/offers1.svg");
     }
@@ -64,15 +67,15 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 49%;
-      background-repeat: no-repeat;
-      background-size: cover;
       padding: 40px;
       gap: 40px;
       border-radius: 30px;
+      @media (max-width: 992px) {
+        width: 100%;
+    }
       h2,
       p {
-        width: 400px;
+        max-width: 400px;
         color: white;
       }
       button {
@@ -93,3 +96,4 @@
     }
   }
 }
+

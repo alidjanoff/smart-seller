@@ -9,9 +9,9 @@ const data = [
     "img": img2,
     "imgBig":imgBg,
     "name": "Iphone",
-    "rating": "4.5",
-    "price": "500$",
-    "priceSale":"439$",
+    "rating": "4.4",
+    "price": "500 ",
+    "priceSale":"439 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
@@ -19,9 +19,9 @@ const data = [
     "img": img1,
     "imgBig":imgBg,
     "name": "Nokia",
-    "rating": "4.5",
-    "price": "560$",
-    "priceSale":"489$",
+    "rating": "4.3",
+    "price": "560 ",
+    "priceSale":"489 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
@@ -29,122 +29,122 @@ const data = [
     "img": img3,
     "imgBig":imgBg,
     "name": "Samsung",
-    "rating": "4.5",
-    "price": "100$",
-    "priceSale":"89$",
+    "rating": "4.2",
+    "price": "100 ",
+    "priceSale":"89 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 1,
+    "id": 4,
     "img": img2,
     "imgBig":imgBg,
     "name": "Honor",
-    "rating": "4.5",
-    "price": "500$",
-    "priceSale":"469$",
+    "rating": "4.15",
+    "price": "500",
+    "priceSale":"469 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 2,
+    "id": 5,
     "img": img1,
     "imgBig":imgBg,
-    "name": "Iphone",
+    "name": "Huawei",
     "rating": "4.5",
-    "price": "560$",
-    "priceSale":"499$",
+    "price": "560 ",
+    "priceSale":"499 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 3,
+    "id": 6,
     "img": img3,
     "imgBig":imgBg,
-    "name": "Iphone",
+    "name": "Oppo",
     "rating": "4.5",
-    "price": "100$",
-    "priceSale":"89$",
+    "price": "100 ",
+    "priceSale":"89 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 1,
+    "id": 7,
+    "img": img2,
+    "imgBig":imgBg,
+    "name": "Lenovo",
+    "rating": "4.2",
+    "price": "500 ",
+    "priceSale":"439 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 8,
+    "img": img1,
+    "imgBig":imgBg,
+    "name": "Honor",
+    "rating": "4.5",
+    "price": "560 ",
+    "priceSale":"479 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 9,
+    "img": img3,
+    "imgBig":imgBg,
+    "name": "Nokia",
+    "rating": "4.1",
+    "price": "100 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 10,
+    "img": img2,
+    "imgBig":imgBg,
+    "name": "Samsung",
+    "rating": "4.5",
+    "price": "500 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 11,
+    "img": img1,
+    "imgBig":imgBg,
+    "name": "Balckberry",
+    "rating": "4.4",
+    "price": "560 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 12,
+    "img": img3,
+    "imgBig":imgBg,
+    "name": "MTS",
+    "rating": "4.5",
+    "price": "100 ",
+    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
+  },
+  {
+    "id": 13,
     "img": img2,
     "imgBig":imgBg,
     "name": "Iphone",
     "rating": "4.5",
-    "price": "500$",
-    "priceSale":"439$",
+    "price": "500 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 2,
+    "id": 14,
     "img": img1,
     "imgBig":imgBg,
     "name": "Iphone",
-    "rating": "4.5",
-    "price": "560$",
-    "priceSale":"479$",
+    "rating": "4.3",
+    "price": "560 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
   {
-    "id": 3,
+    "id": 15,
     "img": img3,
     "imgBig":imgBg,
     "name": "Iphone",
-    "rating": "4.5",
-    "price": "100$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 1,
-    "img": img2,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "500$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 2,
-    "img": img1,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "560$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 3,
-    "img": img3,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "100$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 1,
-    "img": img2,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "500$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 2,
-    "img": img1,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "560$",
-    "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
-  },
-  {
-    "id": 3,
-    "img": img3,
-    "imgBig":imgBg,
-    "name": "Iphone",
-    "rating": "4.5",
-    "price": "100$",
+    "rating": "4.2",
+    "price": "100 ",
     "link":"https://www.smartsale.az/Huawei-nova-Y90-4/64-crystal-blue-Wi-Fi-128GB.../dp/B0BJLF2BRM/ref=sr_1_1?"
   },
 ]

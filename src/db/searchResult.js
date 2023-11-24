@@ -12,7 +12,7 @@ export const searchResult = [
     },
     {
         "id": 2,
-        "name": "Automatic Pet Feeter",
+        "name": " Pet Feeter",
         "location": "Ebay",
         "rating": "4.5",
         "href": "ebay.com",
@@ -21,21 +21,12 @@ export const searchResult = [
     },
     {
         "id": 3,
-        "name": "Automatic Pet Feeter",
+        "name": " Feeter",
         "location": "Ebay",
         "rating": "4.5",
         "href": "ebay.com",
         "about": "ebay.com",
         "price": "66$"
-    },
-    {
-        "id": 4,
-        "name": "Automatic Pet Feeter",
-        "location": "Ebay",
-        "rating": "4.5",
-        "href": "ebay.com",
-        "about": "ebay.com",
-        "price": "66$"
-    },
+    }
 ]
 

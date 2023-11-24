@@ -68,8 +68,8 @@ const Sales = () => {
                           </div>
                         </div>
                         <div className="salePrice">
-                          <div className="price">{x.priceSale}</div>
-                          <div className="price saleStyle">{x.price}</div>
+                          <div className="price">{x.priceSale}<span>$</span></div>
+                          <div className="price saleStyle">{x.price}<span>$</span></div>
                         </div>
                       </a>
                     </SwiperSlide>
