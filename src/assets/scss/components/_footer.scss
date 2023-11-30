@@ -1,77 +1,86 @@
 .footer-container {
-    border-top: 1px solid #E4E4E4;
-    margin-top: 3rem;
+  border-top: 1px solid #e4e4e4;
+  margin-top: 3rem;
 
-    .foot-1 {
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .foot-1 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        .footer-name {
-            width: max-content;
-            font-size: 20px;
-            font-weight: bold;
+    .footer-name {
+      width: max-content;
+      font-size: 20px;
+      font-weight: bold;
 
-            .f-2 {
-                color: $maintext3;
-            }
-        }
-
-        .rules {
-            width: max-content;
-            display: flex;
-            column-gap: 20px;
-
-            .menu-1 {
-                color: $maintext5;
-                font-weight: bold;
-            }
-
-            a {
-                color: $maintext5;
-                font-weight: bold;
-            }
-        }
+      .f-2 {
+        color: $maintext3;
+      }
     }
+
+    .rules {
+      width: max-content;
+      display: flex;
+      column-gap: 20px;
+      a {
+        padding-right: 15px;
+        &:hover {
+          color: aqua;
+        }
+      }
+
+      .menu-1 {
+        color: $maintext5;
+        font-weight: bold;
+      }
+
+      a {
+        color: $maintext5;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .footer-container-2 {
-    background-color: $mainbg6;
-    .foot-2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 75px;
-        font-weight: bold;
+  background-color: $mainbg6;
+  .foot-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    font-weight: bold;
 
-        .social{
-            display: flex;
-            column-gap: 10px;
-            .social-item{
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                background-color: $mainbg2;
-                border: 1px solid $maintext5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: $maintext5;
-            }
+    .social {
+      display: flex;
+      column-gap: 10px;
+      .social-item {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $mainbg2;
+        border: 1px solid $maintext5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $maintext5;
+        &:hover {
+          color: aqua;
         }
+      }
     }
+  }
 }
 
-@media (max-width:576px) {
-    .footer-name{
-        font-size: inherit !important;
-    }
-    .rules{
-        column-gap: 8px !important;
+@media (max-width: 576px) {
+  .footer-name {
+    font-size: inherit !important;
+  }
+  .rules {
+    column-gap: 8px !important;
 
-        a{
-            font-size: 11px;
-        }
+    a {
+      font-size: 11px;
     }
+  }
 }

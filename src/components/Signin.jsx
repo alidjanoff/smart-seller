@@ -1,4 +1,4 @@
-import React, { useRef, createContext} from "react";
+import React, { useRef, createContext, useEffect } from "react";
 import { useMainContext } from "../utils/MainContext";
 // image
 //icons
@@ -19,32 +19,43 @@ export const Signin = ({ setIsAdminPanel }) => {
     e.preventDefault();
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
-    try {
-      const response = await fetch(
-        `http://localhost:3001/users?email=${email}&password=${password}`
-      );
-      let data = await response.json();
-      if (!data.length) {
-        return alert("E-poçt və şifrə uyğun deyil");
+    if (password.length >= 8) {
+      values.setPasswordSimvol(false);
+      try {
+        const response = await fetch(
+          `http://localhost:3001/users?email=${email}&password=${password}`
+        );
+        let data = await response.json();
+        if (!data.length) {
+          return alert("E-poçt və şifrə uyğun deyil");
+        }
+        localStorage.setItem("user", JSON.stringify(data));
+        let user = JSON.parse(localStorage.getItem("user"));
+
+        let dataName = user[0].fullName;
+        let status = user[0].status;
+        values.setUserData(dataName);
+        values.setVipStatus(status);
+        values.setNavBlock("none");
+        if (user[0].role === "admin") {
+          setIsAdminPanel(true);
+          navigate("/admin");
+        } else {
+          setIsAdminPanel(false);
+          values.setOffersData(dataName);
+        }
+        if (dataName) {
+          values.setVipHeight("120px");
+        }
+
+        closeForm();
+      } catch (error) {
+        console.error("Məlumatın alınması zamanı xəta baş verdi: ", error);
       }
-      localStorage.setItem("user", JSON.stringify(data));
-      const user = JSON.parse(localStorage.getItem("user"));
-      
-      const dataName = user[0].fullName;
-      values.setUserData(dataName);
-      if (user[0].role === "admin") {
-        setIsAdminPanel(true);
-        navigate("/admin");
-      } else {
-        setIsAdminPanel(false);
-        values.setOffersData(dataName)
-      }
-      closeForm();
-    } catch (error) {
-      console.error("Məlumatın alınması zamanı xəta baş verdi: ", error);
+    } else {
+      values.setPasswordSimvol(true);
     }
   };
-  
 
   //////////////////////////////////
 
@@ -64,10 +75,21 @@ export const Signin = ({ setIsAdminPanel }) => {
   const backToLog = () => {
     forgot.current.style.right = "-100%";
   };
+  const onChange = () => {
+    if (
+      passwordInput.current.value.length > 0 &&
+      passwordInput.current.value.length <= 7
+    ) {
+      values.setPasswordSimvol(true);
+    } else {
+      values.setPasswordSimvol(false);
+    }
+  };
+
   return (
     <>
       <div>
-        <Header/>
+        <Header />
       </div>
       <div style={{ display: values.openSingin }} className="signin">
         <div onClick={closeForm} className="bg-signin"></div>
@@ -78,18 +100,27 @@ export const Signin = ({ setIsAdminPanel }) => {
         </div>
 
         <div className="inputs-form">
-          <h1>Sign in </h1>
+          <h2>Sign in </h2>
 
           <form onSubmit={handleSubmit}>
-            <input placeholder="Your email" type="email" ref={emailInput} />
+            <input
+              placeholder="Your email"
+              type="email"
+              ref={emailInput}
+              required
+            />
             <input
               placeholder="Your password"
               type="password"
               ref={passwordInput}
+              onChange={onChange}
             />
+            {values.passwordSimvol && (
+              <p> * simvol sayı 8 -dən çox olmalıdır</p>
+            )}
             <div className="remember">
               <div className="remember-1">
-                <input id="check" type="checkbox" />
+                <input id="check" type="checkbox" required />
                 <label htmlFor="check">Remember me</label>
               </div>
 
@@ -114,7 +145,7 @@ export const Signin = ({ setIsAdminPanel }) => {
             <p>No worries, we’ll send you reset instructions</p>
 
             <form action="">
-              <input placeholder="Your email" type="email" />
+              <input placeholder="Your email" type="email" required />
 
               <button>Reset password</button>
             </form>

@@ -9,19 +9,22 @@
       "role": "admin"
     },
     {
-      "fullName": "Feqan",
-      "email": "feqan.93@gmail.com",
-      "password": "123456789",
+      "fullName": "agabala",
+      "email": "ssss.93@gmail.com",
+      "password": "11111111",
       "agreeToTerms": true,
-      "id": 2,
-      "role": "user"
+      "id": 24,
+      "role":"user",
+      "status":"vip"
     },
     {
-      "fullName": "ferid",
-      "email": "ferid.93@gmail.com",
-      "password": "123456789",
+      "fullName": "kerimli",
+      "email": "aaa.93@gmail.com",
+      "password": "11111111",
       "agreeToTerms": true,
-      "id": 3
+      "id": 25,
+      "role":"user",
+      "status":null
     }
   ]
 }

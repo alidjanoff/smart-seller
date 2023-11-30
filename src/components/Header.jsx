@@ -45,14 +45,10 @@ const Header = () => {
     subUser.current.classList.toggle("open-user");
     sub.current.classList.remove("open-lang");
   };
-  const vipContent = () => {
-    alert("heloooooooo");
+  const exitAccount = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
   };
-  const exitAccount = ()=>{
-    localStorage.getItem("user")
-    localStorage.removeItem("user")
-    window.location.reload()
-  }
 
   return (
     <header id="home">
@@ -68,14 +64,14 @@ const Header = () => {
           <div className="menu">
             <ul>
               {fakeHeader.map((x) => (
-                <li key={x.id}>
+                <li key={x.id} style={{ display: values.navBlock }}>
                   <Link to={x.to} className="menu-item">
                     {x.item}
                   </Link>
                 </li>
               ))}
               <li>
-                {values.userData && (
+                {values.vipStatus && (
                   <Link to="/search" className="menu-item">
                     Keçmiş axtarışlar
                   </Link>
@@ -112,22 +108,31 @@ const Header = () => {
                 <IoIosArrowDown />
               </div>
 
-              <div ref={subUser} className="user-sub">
+              <div
+                ref={subUser}
+                className="user-sub"
+                style={{ height: values.vipHeight }}
+              >
                 {values.userData && (
                   <div className="tips-user">
-                    <Link
-                      to="/vipbuy"
-                      onClick={vipContent}
-                      className="user-class"
-                    >
-                      VIP
-                    </Link>
+                    {values.vipStatus ? (
+                      <p className="vip-a">VIP</p>
+                    ) : (
+                      <div>
+                        <p>VIP</p>
+                        <Link to="/vipbuy" className="user-class">
+                          Al
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 )}
                 {values.userData ? (
                   <div className="user-cabinet">
                     <div className="succes-user">{values.userData}</div>
-                    <button onClick={exitAccount} className="cabinet">Çıxış</button>
+                    <button onClick={exitAccount} className="cabinet">
+                      Çıxış
+                    </button>
                   </div>
                 ) : (
                   <div className="btns-user">

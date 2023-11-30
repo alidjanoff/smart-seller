@@ -21,6 +21,10 @@ const PayCards = () => {
           <input type="text" placeholder="123" />
         </label>
         <label htmlFor="">
+          Məbləğ
+          <input type="text" placeholder="123" />
+        </label>
+        <label htmlFor="">
           <input className="submit" type="Submit" value="Göndər" />
         </label>
       </form>

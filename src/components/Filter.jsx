@@ -1,9 +1,9 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 import { Link } from "react-router-dom";
-import dataFilter from '../db/fakeData';
-import { AiOutlineStar } from 'react-icons/ai'
+import dataFilter from "../db/fakeData";
+import { AiOutlineStar } from "react-icons/ai";
 import { useMainContext } from "../utils/MainContext";
-export const MyContext = createContext()
+export const MyContext = createContext();
 
 const Filter = () => {
   const values = useMainContext();
@@ -11,13 +11,12 @@ const Filter = () => {
   const allData = dataFilter;
   const indexOfLastItem = values.currentPage * itemsPerPage;
   const currentItems = allData.slice(0, indexOfLastItem);
-  
+
   const [sortType, setSortType] = useState("");
 
   const handleSortChange = (e) => {
     setSortType(e.target.value);
   };
-
 
   const sortData = (data, sortType) => {
     if (sortType === "rating") {
@@ -45,19 +44,25 @@ const Filter = () => {
             <option value="price">Qiymətə görə</option>
           </select>
           <div className="dataFilter">
-            <div className='dataCont'>
+            <div className="dataCont">
               {sortData(currentItems, sortType).map((item, index) => (
-                <div key={index} className='dataMap'>
+                <div key={index} className="dataMap">
                   <div className="img">
-                    <Link><img src={item.img} alt="" /></Link>
+                    <Link>
+                      <img src={item.img} alt="" />
+                    </Link>
                   </div>
                   <div className="name-rty">
                     <p>{item.name}</p>
                     <div className="star-rty">
-                      <AiOutlineStar className='star' /><span>{item.rating}</span>
+                      <AiOutlineStar className="star" />
+                      <span>{item.rating}</span>
                     </div>
                   </div>
-                  <p>{item.price}<span>$</span></p>
+                  <p>
+                    {item.price}
+                    <span>$</span>
+                  </p>
                 </div>
               ))}
             </div>

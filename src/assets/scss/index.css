@@ -69,6 +69,9 @@
   font-size: 18px;
   padding-left: 10px;
 }
+.description .right-side .search-product form p {
+  color: red;
+}
 .description .right-side .search-product form button {
   width: 100%;
   height: 64px;
@@ -212,7 +215,7 @@
   width: 112px;
   height: 112px;
   border-radius: 10px;
-  border: 1.5px solid #E4E4E4;
+  border: 1.5px solid #e4e4e4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,7 +231,7 @@
   padding: 20px;
 }
 .popular-brands .popular-carousel .slide-product .image-product {
-  border: 1.5px solid #E4E4E4;
+  border: 1.5px solid #e4e4e4;
   padding: 20px;
   border-radius: 10px;
 }
@@ -1069,7 +1072,7 @@ header .logo_and_nav .menu .user-select .user-inner .user-profile {
 }
 header .logo_and_nav .menu .user-select .user-sub {
   width: 230px;
-  height: 120px;
+  height: 60px;
   border-radius: 8px;
   background-color: #fff;
   position: absolute;
@@ -1082,26 +1085,43 @@ header .logo_and_nav .menu .user-select .user-sub {
   justify-content: space-between;
   padding: 20px;
   transition: all 0.5s;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 header .logo_and_nav .menu .user-select .user-sub .tips-user {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   row-gap: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 4px;
+  border-radius: 10px;
+}
+header .logo_and_nav .menu .user-select .user-sub .tips-user .vip-a {
+  width: 100%;
+  text-align: center;
+}
+header .logo_and_nav .menu .user-select .user-sub .tips-user div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 header .logo_and_nav .menu .user-select .user-sub .tips-user .user-class {
-  border-radius: 8px;
-  width: 100%;
-  height: 40px;
   transition: all 0.5s;
-  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 8px;
+  padding: 3px 18px;
   margin: 5px 0;
+  border: none;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
 }
 header .logo_and_nav .menu .user-select .user-sub .tips-user .user-class:hover {
-  background-color: #B9B7AD;
+  background-color: rgb(90, 90, 152);
 }
 header .logo_and_nav .menu .user-select .user-sub .user-cabinet {
   width: 100%;
@@ -1118,6 +1138,10 @@ header .logo_and_nav .menu .user-select .user-sub .user-cabinet .cabinet {
   color: white;
   border-radius: 10px;
   cursor: pointer;
+  transition: 200ms;
+}
+header .logo_and_nav .menu .user-select .user-sub .user-cabinet .cabinet:hover {
+  background-color: rgb(90, 90, 152);
 }
 header .logo_and_nav .menu .user-select .user-sub .btns-user {
   display: flex;
@@ -1204,7 +1228,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   }
 }
 .footer-container {
-  border-top: 1px solid #E4E4E4;
+  border-top: 1px solid #e4e4e4;
   margin-top: 3rem;
 }
 .footer-container .foot-1 {
@@ -1228,6 +1252,12 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+.footer-container .foot-1 .rules a {
+  padding-right: 15px;
+}
+.footer-container .foot-1 .rules a:hover {
+  color: aqua;
 }
 .footer-container .foot-1 .rules .menu-1 {
   color: #000;
@@ -1263,6 +1293,9 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   justify-content: center;
   align-items: center;
   color: #000;
+}
+.footer-container-2 .foot-2 .social .social-item:hover {
+  color: aqua;
 }
 
 @media (max-width: 576px) {
@@ -1313,7 +1346,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
 .signin-form .img-form {
   width: 50%;
   height: 100%;
-  background-color: #A9C1C0;
+  background-color: #a9c1c0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1348,7 +1381,11 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
 .signin-form .inputs-form form {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 5px;
+}
+.signin-form .inputs-form form p {
+  color: red;
+  font-size: 12px;
 }
 .signin-form .inputs-form form .remember {
   display: flex;
@@ -1379,7 +1416,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   cursor: pointer;
 }
 .signin-form .inputs-form form input {
-  height: 35px;
+  height: 30px;
   outline: none;
   border-radius: 8px;
   border: 1px solid #707070;
@@ -1583,7 +1620,6 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   width: 100%;
   height: 100vh;
   z-index: 2000;
-  transition: all 0.5s;
 }
 .registr-succes .reg-suc {
   width: 400px;

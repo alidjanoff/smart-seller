@@ -1,25 +1,24 @@
-import React, { createContext } from 'react'
-import { useMainContext } from "../utils/MainContext";
-export const MyContext = createContext()
-
+import React, { Link } from "react";
 
 const OldSearch = () => {
-    const values = useMainContext();
-    return (
+  const searchResultsLocal = JSON.parse(localStorage.getItem("searchData"));
+  return (
     <>
-    <section className="searchBack">
+      <section className="searchBack">
         <h2>Keçmiş axtarışlar</h2>
         <div className="oldSearch">
-            {values.searchResults.map((x)=>(
+          {searchResultsLocal.map((x) => (
             <div className="searches" key={x.id}>
-            <p>{x.name} <span>{x.price}</span></p>
-            <a href="#">Məhsul səhifəsinə keç</a>
+              <p>
+                {x.name} <span>{x.price}</span>
+              </p>
+              <Link>Məhsul səhifəsinə keç</Link>
+            </div>
+          ))}
         </div>
-            ))}
-        </div>
-    </section>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default OldSearch
+export default OldSearch;

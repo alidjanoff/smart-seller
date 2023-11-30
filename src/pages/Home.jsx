@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -19,7 +19,6 @@ import plan from "../assets/img/g10.png";
 import plan4 from "../assets/img/FLO Mağazacılık svg.png";
 import plan2 from "../assets/img/Zara svg.png";
 import Sales from "../components/Sales";
-import ProductAbout from "../components/ProductAbout";
 import Offers from "../components/Offers";
 import Filter from "../components/Filter";
 
@@ -28,19 +27,22 @@ export const MyContext = createContext();
 
 const Home = () => {
   const values = useMainContext();
-
+  const searchValue = useRef();
   const searchInJsonData = (term) => {
     const results = searchResult.filter((user) =>
       user.name.toLowerCase().includes(term.toLowerCase())
     );
     values.setSearchResults(results);
-
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    searchInJsonData(values.searchTerm);
-    values.setOpenSearchData('block')
+    if (searchValue.current.value === "") {
+      values.setActivInfo(true);
+    } else {
+      searchInJsonData(values.searchTerm);
+      values.setOpenSearchData("block");
+    }
   };
   localStorage.setItem("searchData", JSON.stringify(values.searchResults));
   const searchResultsLocal = JSON.parse(localStorage.getItem("searchData"));
@@ -64,15 +66,25 @@ const Home = () => {
                 type="text"
                 placeholder="Arama yap..."
                 value={values.searchTerm}
-                onChange={(e) => values.setSearchTerm(e.target.value)}
+                ref={searchValue}
+                onChange={(e) => {
+                  values.setSearchTerm(e.target.value);
+                  if (e.target.value !== "") {
+                    values.setActivInfo(false);
+                  }
+                }}
               />
+              {values.activInfo && <p>*açar söz daxil edin</p>}
               <button onClick={handleSearch}>Axtar</button>
             </form>
           </div>
         </div>
       </div>
 
-      <div className="container-fluid" style={{ display: values.openSearchData }}>
+      <div
+        className="container-fluid"
+        style={{ display: values.openSearchData }}
+      >
         <div className="container search-result">
           <h1>“Automatic Pet Feeter” axtarışından çıxan nəticələr</h1>
           <div className="products-search">
@@ -101,10 +113,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {values.offersData && <Sales />}
-      {values.offersData &&<ProductAbout />}
-      {values.offersData && <Filter />}
-      {values.offersData && <Offers />}
+      {values.vipStatus && <Sales />}
+      {values.vipStatus && <Filter />}
+      {values.vipStatus && <Offers />}
       <div className="container-fluid">
         <div className="container popular-brands">
           <p className="name-section">Populyar Brendlər</p>
@@ -228,7 +239,9 @@ const Home = () => {
                       </div>
                     </div>
 
-                    <div className="price">{x.price} <span>$</span></div>
+                    <div className="price">
+                      {x.price} <span>$</span>
+                    </div>
                   </a>
                 </SwiperSlide>
               ))}
