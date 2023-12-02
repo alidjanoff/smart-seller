@@ -48,6 +48,7 @@ const App = () => {
             <Route path="/vipbuy" element={<Vipbuy />} />
             <Route path="/pay" element={<Pay />} />
             <Route path="/search" element={<OldSearch />} />
+            {/* <Route path="/product" element={<ProductAbout />} /> */}
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
           <Write />

@@ -23,6 +23,8 @@ const Filter = () => {
       return data.sort((a, b) => b.rating - a.rating);
     } else if (sortType === "price") {
       return data.sort((a, b) => a.price - b.price);
+    } else if (sortType === "price1") {
+      return data.sort((a, b) => b.price - a.price);
     } else {
       return data;
     }
@@ -31,6 +33,21 @@ const Filter = () => {
   const handlePageChange = () => {
     if (values.currentPage < Math.ceil(allData.length / itemsPerPage)) {
       values.setCurrentPage((prevPage) => prevPage + 1);
+      if (allData.length > 7) {
+        values.setButton2(true);
+      } else {
+        values.setButton2(false);
+      }
+    }
+  };
+  const handlePageChange2 = () => {
+    if (values.currentPage < Math.ceil(allData.length / itemsPerPage)) {
+      values.setCurrentPage((prevPage) => prevPage - 1);
+      if (allData.length >= 5) {
+        values.setButton2(false);
+      } else {
+        values.setButton2(true);
+      }
     }
   };
 
@@ -40,8 +57,9 @@ const Filter = () => {
         <div className="filter">
           <h2>Siz istəyin biz sizin üçün sıralayaq</h2>
           <select name="" id="" onChange={handleSortChange}>
-            <option value="rating">Reytinqə görə</option>
-            <option value="price">Qiymətə görə</option>
+            <option value="rating">Reytinq (çoxdan-aza)</option>
+            <option value="price">Qiymət (azdan-çoxa)</option>
+            <option value="price1">Qiymət (çoxdan-aza)</option>
           </select>
           <div className="dataFilter">
             <div className="dataCont">
@@ -68,6 +86,9 @@ const Filter = () => {
             </div>
             <div>
               <button onClick={handlePageChange}>Daha Çox</button>
+              {values.button2 && (
+                <button onClick={handlePageChange2}>Daha Az</button>
+              )}
             </div>
           </div>
         </div>

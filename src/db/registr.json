@@ -14,8 +14,8 @@
       "password": "11111111",
       "agreeToTerms": true,
       "id": 24,
-      "role":"user",
-      "status":"vip"
+      "role": "user",
+      "status": "vip"
     },
     {
       "fullName": "kerimli",
@@ -23,8 +23,15 @@
       "password": "11111111",
       "agreeToTerms": true,
       "id": 25,
-      "role":"user",
-      "status":null
+      "role": "user",
+      "status": null
+    },
+    {
+      "fullName": "ssdsds",
+      "email": "dsdsdsdsd@gmail.com",
+      "password": "sdsdsdsdsd",
+      "agreeToTerms": true,
+      "id": 26
     }
   ]
 }

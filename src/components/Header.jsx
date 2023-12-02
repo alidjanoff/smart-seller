@@ -49,6 +49,7 @@ const Header = () => {
     localStorage.removeItem("user");
     window.location.href = "/";
   };
+  // values.setSignOpen2(openUser);
 
   return (
     <header id="home">

@@ -1870,7 +1870,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
 }
 .filter-back .filter {
   width: 90%;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -1909,7 +1909,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   gap: 20px;
 }
 .filter-back .filter .dataFilter .dataCont .dataMap .img {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 30px;
   padding: 50px;
 }
@@ -1933,6 +1933,7 @@ header .logo_and_nav .menu .burger-menu .burger-inner {
   color: white;
   padding: 10px 20px;
   margin-top: 20px;
+  margin-right: 10px;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 30px;
   cursor: pointer;

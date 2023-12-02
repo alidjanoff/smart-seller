@@ -14,6 +14,7 @@ export const Register = () => {
   const name = useRef();
   const email = useRef();
   const password = useRef();
+  const checkbox = useRef();
 
   const closeRegister = () => {
     values.setOpenRegister("none");
@@ -79,10 +80,11 @@ export const Register = () => {
       values.setEmailSimvol(true);
     }
   };
-  const openRegistrSucces = () => {
-    if (formData.fullName && formData.email && formData.password) {
+  const openRegistrSucces = (e) => {
+    if (formData.fullName && formData.password && formData.email) {
       values.setOpenRegistrSucces("block");
       values.setOpenRegFormSuc("50%");
+      console.log();
     }
   };
   return (
@@ -116,6 +118,7 @@ export const Register = () => {
               onChange={handleChange}
               placeholder="Your email"
               ref={email}
+              required
             />
             {values.emailSimvol && <p>* elektron poçdu daxil edin</p>}
             <input
@@ -135,6 +138,7 @@ export const Register = () => {
                   name="agreeToTerms"
                   checked={formData.agreeToTerms}
                   onChange={handleChange}
+                  ref={checkbox}
                   required
                 />
                 <label className="priwacy" htmlFor="read">

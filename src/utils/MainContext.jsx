@@ -25,8 +25,17 @@ export const MainContext = ({ children }) => {
   const [navBlock, setNavBlock] = useState("block");
   const [vipStatus, setVipStatus] = useState(null);
   const [activInfo, setActivInfo] = useState(false);
+  const [button2, setButton2] = useState(false);
+  const [sP, setSP] = useState(false);
+  const [id, setId] = useState();
 
   const globalStates = {
+    id,
+    setId,
+    sP,
+    setSP,
+    button2,
+    setButton2,
     activInfo,
     setActivInfo,
     navBlock,
