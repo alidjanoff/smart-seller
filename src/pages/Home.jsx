@@ -6,7 +6,6 @@ import "swiper/css";
 
 //data
 import data from "../db/fakeData";
-import searchResult from "../db/fakeData";
 
 //icons
 import {
@@ -24,13 +23,14 @@ import Offers from "../components/Offers";
 import Filter from "../components/Filter";
 
 import { useMainContext } from "../utils/MainContext";
+import ProductAbout from "../components/ProductAbout";
 export const MyContext = createContext();
 
 const Home = () => {
   const values = useMainContext();
   const searchValue = useRef();
   const searchInJsonData = (term) => {
-    const results = searchResult.filter((user) =>
+    const results = data.filter((user) =>
       user.name.toLowerCase().includes(term.toLowerCase())
     );
     values.setSearchResults(results);
@@ -44,11 +44,12 @@ const Home = () => {
       searchInJsonData(values.searchTerm);
       values.setOpenSearchData("block");
     }
+    values.setExitSearch("flex");
   };
   localStorage.setItem("searchData", JSON.stringify(values.searchResults));
   const searchResultsLocal = JSON.parse(localStorage.getItem("searchData"));
-  const backSearch = () => {
-    values.setSP(false);
+  const exitSearch = () => {
+    values.setExitSearch("none");
   };
   return (
     <div>
@@ -91,7 +92,10 @@ const Home = () => {
             className="container-fluid search2"
             style={{ display: values.openSearchData }}
           >
-            <div className="container  search-result">
+            <div
+              className="container  search-result"
+              style={{ display: values.exitSearch }}
+            >
               <h1>
                 "<span>{values.searchTerm}</span>" axtarışından çıxan nəticələr
               </h1>
@@ -114,8 +118,13 @@ const Home = () => {
 
                       <button
                         className="link-search"
-                        onClick={() => (values.setId(x.id), values.setSP(true))}
-                        // href={x.about}
+                        onClick={() => (
+                          values.setId(x.id),
+                          values.setSP(true),
+                          values.setFilterPage(false),
+                          values.setIdFilter(null),
+                          values.setIdSale(null)
+                        )}
                       >
                         Məhsul haqqında məlumat al
                       </button>
@@ -123,54 +132,16 @@ const Home = () => {
                   </div>
                 ))}
               </div>
+              <button onClick={exitSearch}>Bağla</button>
             </div>
           </div>
         ) : null}
-        {values.sP ? (
-          <div id="productAbout">
-            {searchResultsLocal
-              .filter((x) => x.id === values.id)
-              .map((x) => (
-                <section className="productAbout">
-                  <div className="contentProduct">
-                    <div className="leftContent">
-                      <h4>MƏHSUL HAQQINDA MƏLUMAT</h4>
-                      <p>{x.name}</p>
-                      <a href={x.href}>Məhsulun linkinə keçid et</a>
-                      <div className="reyting">
-                        <AiOutlineStar className="star" />
-                        <span>{x.rating}</span>
-                      </div>
-                      <div className="price">{x.price}</div>
-                    </div>
-                    <div className="rightContent">
-                      <img src={x.about.img} alt="imgbig" />
-                    </div>
-                  </div>
-                  <div className="customerComments">
-                    <div className="commentData">
-                      <div className="leftData">
-                        <img src={x.commit.img} alt="" />
-                      </div>
-                      <div className="rightData">
-                        <h4>{x.commit.name}</h4>
-                        <div className="reyting">
-                          <AiOutlineStar className="star" />
-                          <span>{x.reyt}</span>
-                        </div>
-                        <p>{x.commit.text}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <button onClick={backSearch}>Geri</button>
-                </section>
-              ))}
-          </div>
-        ) : null}
+        {values.sP ? <ProductAbout /> : null}
       </div>
-
       {values.vipStatus && <Sales />}
+      {values.salePage ? <ProductAbout /> : null}
       {values.vipStatus && <Filter />}
+      {values.filterPage ? <ProductAbout /> : null}
       {values.vipStatus && <Offers />}
       <div className="container-fluid">
         <div className="container popular-brands">

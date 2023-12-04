@@ -27,9 +27,27 @@ export const MainContext = ({ children }) => {
   const [activInfo, setActivInfo] = useState(false);
   const [button2, setButton2] = useState(false);
   const [sP, setSP] = useState(false);
+  const [filterPage, setFilterPage] = useState(false);
+  const [salePage, setSalePage] = useState(false);
   const [id, setId] = useState();
+  const [idFilter, setIdFilter] = useState();
+  const [idSale, setIdSale] = useState();
+  const [idOld, setIdOld] = useState();
+  const [exitSearch, setExitSearch] = useState("flex");
 
   const globalStates = {
+    idOld,
+    setIdOld,
+    idSale,
+    setIdSale,
+    salePage,
+    setSalePage,
+    exitSearch,
+    setExitSearch,
+    idFilter,
+    setIdFilter,
+    filterPage,
+    setFilterPage,
     id,
     setId,
     sP,

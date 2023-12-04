@@ -1,10 +1,11 @@
 header {
-  overflow-x: hidden;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .logo_and_nav {
     height: 75px;
-    width: 100%;
-    padding-left: 30px;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,7 +85,8 @@ header {
             width: 230px;
             border-radius: 10px;
             padding: 20px;
-
+            box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.4);
+            right: 80px;
             .lang-block {
               display: flex;
               flex-direction: column;
@@ -150,7 +152,7 @@ header {
           position: absolute;
           z-index: 2;
           top: -100%;
-          right: 15px;
+          right: 80px;
           opacity: 0;
           display: flex;
           flex-direction: column;
@@ -165,8 +167,9 @@ header {
             align-items: center;
             row-gap: 8px;
             border: 1px solid rgba(0, 0, 0, 0.116);
-            padding: 4px;
+            padding: 1px 7px;
             border-radius: 10px;
+            margin-bottom: 5px;
             .vip-a {
               width: 100%;
               text-align: center;
@@ -183,7 +186,7 @@ header {
               display: flex;
               justify-content: center;
               align-items: center;
-              padding: 3px 18px;
+              padding: 5px 23px;
               margin: 5px 0;
               border: none;
               background-color: $maintext3;
@@ -201,17 +204,21 @@ header {
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             border: 1px solid rgba(129, 126, 126, 0.205);
-            padding: 4px;
+            padding: 4px 6px;
             border-radius: 10px;
             .cabinet {
-              width: 50px;
+              width: 60px;
               border: none;
               background-color: $maintext3;
               color: white;
               border-radius: 10px;
               cursor: pointer;
               transition: 200ms;
+              text-align: center;
+              font-size: 12px;
+              margin-bottom: 1px;
               &:hover {
                 background-color: rgb(90, 90, 152);
               }

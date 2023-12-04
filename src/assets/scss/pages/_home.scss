@@ -1,7 +1,8 @@
 div {
   .description {
-    position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
     height: 80vh;
     background: linear-gradient(
         0deg,
@@ -11,11 +12,7 @@ div {
       lightgray 50% / cover no-repeat;
 
     .container-dec {
-      position: absolute;
       width: 85%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
       display: flex;
       .left-side {
         width: 50%;
@@ -30,7 +27,9 @@ div {
         }
 
         p {
+          text-align: center;
           color: $maintext6;
+          margin-bottom: 5px;
         }
       }
 
@@ -39,7 +38,6 @@ div {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 80px;
 
         .search-product {
           width: 500px;
@@ -94,6 +92,9 @@ div {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      button {
+        margin: 5px 0;
+      }
 
       h1 {
         text-align: center;
@@ -140,6 +141,13 @@ div {
             .name-search {
               font-weight: bold;
               font-size: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              .star {
+                color: gold;
+              }
             }
 
             a {
@@ -339,20 +347,28 @@ div {
 
   @media (max-width: 900px) {
     .description {
+      display: flex;
       flex-direction: column;
       align-items: center;
       row-gap: 50px;
+      .container-dec {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .left-side {
+          width: 100%;
+          padding-left: 10px;
+          padding-right: 10px;
 
-      .left-side {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-
-        h1 {
-          text-align: center !important;
+          h1 {
+            text-align: center !important;
+          }
+          p {
+            text-align: center;
+          }
         }
-        p {
-          text-align: center;
+        .right-side {
+          width: 85%;
         }
       }
     }
@@ -366,9 +382,6 @@ div {
       .left-side {
         h1 {
           font-size: 30px !important;
-          text-align: start !important;
-        }
-        p {
           text-align: start !important;
         }
       }

@@ -7,7 +7,7 @@
   margin-top: 15px;
 
   .contentProduct {
-    width: 90%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,7 +69,7 @@
     }
   }
   .customerComments {
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -115,6 +115,7 @@ button {
   transition: 500ms;
   cursor: pointer;
   border: none;
+  margin-bottom: 10px;
   &:hover {
     background-color: rgba(0, 60, 255, 0.993);
   }

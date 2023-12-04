@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
-
+import { useMainContext } from "../utils/MainContext";
 //data
 import data from "../db/fakeData";
 //icons
@@ -10,8 +10,11 @@ import {
   AiOutlineArrowLeft,
   AiOutlineStar,
 } from "react-icons/ai";
+import { createContext } from "react";
+export const MyContext = createContext();
 
 const Sales = () => {
+  const values = useMainContext();
   return (
     <>
       <div className="container-fluid">
@@ -58,7 +61,17 @@ const Sales = () => {
                     <SwiperSlide className="slide-product">
                       <a href="">
                         <div className="image-product">
-                          <img src={x.img} alt="" />
+                          <img
+                            src={x.img}
+                            alt=""
+                            onClick={(e) => (
+                              e.preventDefault(),
+                              values.setId(null),
+                              values.setIdFilter(null),
+                              values.setIdSale(x.id),
+                              values.setSalePage(true)
+                            )}
+                          />
                         </div>
                         <div className="name-and-rating">
                           <span className="name">{x.name}</span>
@@ -68,8 +81,14 @@ const Sales = () => {
                           </div>
                         </div>
                         <div className="salePrice">
-                          <div className="price">{x.priceSale}<span>$</span></div>
-                          <div className="price saleStyle">{x.price}<span>$</span></div>
+                          <div className="price">
+                            {x.priceSale}
+                            <span>$</span>
+                          </div>
+                          <div className="price saleStyle">
+                            {x.price}
+                            <span>$</span>
+                          </div>
                         </div>
                       </a>
                     </SwiperSlide>

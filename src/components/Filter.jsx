@@ -11,9 +11,7 @@ const Filter = () => {
   const allData = dataFilter;
   const indexOfLastItem = values.currentPage * itemsPerPage;
   const currentItems = allData.slice(0, indexOfLastItem);
-
   const [sortType, setSortType] = useState("");
-
   const handleSortChange = (e) => {
     setSortType(e.target.value);
   };
@@ -53,46 +51,57 @@ const Filter = () => {
 
   return (
     <>
-      <section className="filter-back">
-        <div className="filter">
-          <h2>Siz istəyin biz sizin üçün sıralayaq</h2>
-          <select name="" id="" onChange={handleSortChange}>
-            <option value="rating">Reytinq (çoxdan-aza)</option>
-            <option value="price">Qiymət (azdan-çoxa)</option>
-            <option value="price1">Qiymət (çoxdan-aza)</option>
-          </select>
-          <div className="dataFilter">
-            <div className="dataCont">
-              {sortData(currentItems, sortType).map((item, index) => (
-                <div key={index} className="dataMap">
-                  <div className="img">
-                    <Link>
-                      <img src={item.img} alt="" />
-                    </Link>
-                  </div>
-                  <div className="name-rty">
-                    <p>{item.name}</p>
-                    <div className="star-rty">
-                      <AiOutlineStar className="star" />
-                      <span>{item.rating}</span>
+      {!values.filterPage ? (
+        <section className="filter-back">
+          <div className="filter">
+            <h2>Siz istəyin biz sizin üçün sıralayaq</h2>
+            <select name="" id="" onChange={handleSortChange}>
+              <option value="rating">Reytinq (çoxdan-aza)</option>
+              <option value="price">Qiymət (azdan-çoxa)</option>
+              <option value="price1">Qiymət (çoxdan-aza)</option>
+            </select>
+            <div className="dataFilter">
+              <div className="dataCont">
+                {sortData(currentItems, sortType).map((x) => (
+                  <div key={x.id} className="dataMap">
+                    <div className="img">
+                      <Link>
+                        <img
+                          src={x.img}
+                          alt=""
+                          onClick={() => (
+                            values.setIdFilter(x.id),
+                            values.setFilterPage(true),
+                            values.setId(null),
+                            values.setIdSale(null)
+                          )}
+                        />
+                      </Link>
                     </div>
+                    <div className="name-rty">
+                      <p>{x.name}</p>
+                      <div className="star-rty">
+                        <AiOutlineStar className="star" />
+                        <span>{x.rating}</span>
+                      </div>
+                    </div>
+                    <p>
+                      {x.price}
+                      <span>$</span>
+                    </p>
                   </div>
-                  <p>
-                    {item.price}
-                    <span>$</span>
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div>
-              <button onClick={handlePageChange}>Daha Çox</button>
-              {values.button2 && (
-                <button onClick={handlePageChange2}>Daha Az</button>
-              )}
+                ))}
+              </div>
+              <div>
+                <button onClick={handlePageChange}>Daha Çox</button>
+                {values.button2 && (
+                  <button onClick={handlePageChange2}>Daha Az</button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </>
   );
 };

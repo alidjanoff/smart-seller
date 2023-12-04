@@ -81,10 +81,14 @@ export const Register = () => {
     }
   };
   const openRegistrSucces = (e) => {
-    if (formData.fullName && formData.password && formData.email) {
+    if (
+      formData.fullName &&
+      formData.password > 8 &&
+      formData.email &&
+      /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)
+    ) {
       values.setOpenRegistrSucces("block");
       values.setOpenRegFormSuc("50%");
-      console.log();
     }
   };
   return (
