@@ -18,6 +18,7 @@ import { fakeHeader } from "../db/fakeHeader";
 
 const Header = () => {
   const values = useMainContext();
+  const navigate = useNavigate();
   const openMenu = () => {
     values.setIsOpen("0");
   };
@@ -48,9 +49,9 @@ const Header = () => {
   };
   const exitAccount = () => {
     localStorage.removeItem("user");
+    navigate("/");
     window.location.href = "/";
   };
-  // values.setSignOpen2(openUser);
 
   return (
     <header id="home">

@@ -15,31 +15,33 @@ import { About } from "./pages/About";
 import { Why } from "./pages/Why";
 
 // Components
-import Footer from "./components/Footer";
-import { MobileMenu } from "./mobilemenu/MobileMenu";
-import { Signin } from "./components/Signin";
-import { Write } from "./components/Write";
-import { Register } from "./components/Register";
-import RegistrSucces from "./components/RegistrSucces";
+
 import Vipbuy from "./pages/Vipbuy";
 import Pay from "./pages/Pay";
 import OldSearch from "./pages/OldSearch";
 import HomeAdmin from "./adminPanel/pageAdmin/HomeAdmin";
+import Layout from "./layout/Layout";
 
 const App = () => {
   const [isAdminPanel, setIsAdminPanel] = useState(false);
   return (
     <>
-      {!isAdminPanel ? (
-        <MainContext>
-          <Signin
-            isAdminPanel={isAdminPanel}
-            setIsAdminPanel={setIsAdminPanel}
-          />
-          <Register />
-          <RegistrSucces />
-          <MobileMenu />
-          <Routes>
+      <MainContext>
+        <Routes>
+          {isAdminPanel && (
+            <Route path="/admin">
+              <Route path="/admin" element={<HomeAdmin />} />
+            </Route>
+          )}
+          <Route
+            path="/"
+            element={
+              <Layout
+                setIsAdminPanel={setIsAdminPanel}
+                isAdminPanel={isAdminPanel}
+              />
+            }
+          >
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
@@ -48,19 +50,9 @@ const App = () => {
             <Route path="/vipbuy" element={<Vipbuy />} />
             <Route path="/pay" element={<Pay />} />
             <Route path="/search" element={<OldSearch />} />
-            {/* <Route path="/product" element={<ProductAbout />} /> */}
-            {/* <Route path="*" element={<NotFound />} /> */}
-          </Routes>
-          <Write />
-          <Footer />
-        </MainContext>
-      ) : (
-        <MainContext>
-          <Routes>
-            <Route path="/admin" element={<HomeAdmin />} />
-          </Routes>
-        </MainContext>
-      )}
+          </Route>
+        </Routes>
+      </MainContext>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useRef, createContext, useEffect } from "react";
+import React, { useRef, createContext, useEffect, useState } from "react";
 import { useMainContext } from "../utils/MainContext";
 // image
 //icons
@@ -14,6 +14,32 @@ export const Signin = ({ setIsAdminPanel }) => {
   const navigate = useNavigate();
   const emailInput = useRef();
   const passwordInput = useRef();
+  const [userLocal, setUserLocal] = useState(null);
+
+  useEffect(() => {
+    if (localStorage.getItem("user")) {
+      let user = JSON.parse(localStorage.getItem("user"));
+      setUserLocal(user);
+    }
+  }, []);
+
+  if (userLocal) {
+    let dataName = userLocal[0].fullName;
+    let status = userLocal[0].status;
+    values.setUserData(dataName);
+    values.setVipStatus(status);
+    values.setNavBlock("none");
+    if (userLocal[0].role === "admin") {
+      setIsAdminPanel(true);
+      navigate("/admin");
+    } else {
+      setIsAdminPanel(false);
+      values.setOffersData(dataName);
+    }
+    if (dataName) {
+      values.setVipHeight("120px");
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,7 +146,7 @@ export const Signin = ({ setIsAdminPanel }) => {
             )}
             <div className="remember">
               <div className="remember-1">
-                <input id="check" type="checkbox" required />
+                <input id="check" type="checkbox" />
                 <label htmlFor="check">Remember me</label>
               </div>
 

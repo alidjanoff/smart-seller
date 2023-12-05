@@ -34,8 +34,11 @@ export const MainContext = ({ children }) => {
   const [idSale, setIdSale] = useState();
   const [idOld, setIdOld] = useState();
   const [exitSearch, setExitSearch] = useState("flex");
+  const [stateAdmin, setStateAdmin] = useState("home");
 
   const globalStates = {
+    stateAdmin,
+    setStateAdmin,
     idOld,
     setIdOld,
     idSale,

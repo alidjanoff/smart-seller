@@ -28,16 +28,15 @@
           }
           li {
             padding: 10px 30px;
-            &:hover{
-                background-color: rgba(0, 0, 0, 0.056);
-              }
+            &:hover {
+              background-color: #0000000e;
+            }
             a {
               display: flex;
               justify-content: flex-start;
               align-items: center;
               gap: 10px;
               color: black;
-
             }
           }
         }
@@ -51,7 +50,7 @@
         justify-content: flex-start;
         border: 1px solid rgba(0, 0, 0, 0.07);
         background-color: rgba(0, 0, 0, 0.057);
-        overflow-y:scroll;
+        overflow-y: scroll;
       }
     }
   }
